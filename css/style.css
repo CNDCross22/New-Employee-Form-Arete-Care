@@ -1,0 +1,342 @@
+/* ============================================================================
+   Arete Care — New Employee Onboarding (letterhead HTML forms)
+   Screen: a soft workspace with the documents rendered as Arete letterhead
+   "sheets". Print: those same sheets become the downloaded PDF (banner +
+   watermark repeat on every page), one file for all documents.
+   ============================================================================ */
+:root{
+    --purple:#8b7ff0;          /* banner wave */
+    --purple-deep:#5b4b9e;     /* headings */
+    --purple-ink:#3d3a7a;
+    --teal:#3fb7ad;
+    --teal-deep:#2c8f87;
+    --ink:#2b2a44;
+    --muted:#6f6b86;
+    --line:#e5e3ef;
+    --field:#eef1fb;           /* fill-in tint */
+    --field-focus:#e3e8ff;
+    /* "you must type here" affordance — screen only, never printed */
+    --fill:rgba(58,156,163,.15);
+    --fill-line:rgba(44,143,135,.45);
+    --fill-hover:rgba(58,156,163,.26);
+    --fill-focus:rgba(58,156,163,.34);
+    --page:#eceaf4;
+    --sheet-w:794px;           /* A4 width @96dpi (210mm) */
+    --mgn:72px;                /* side margin */
+    --band:108px;              /* space reserved for the banner */
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; }
+body{
+    font-family:"Segoe UI", system-ui, Arial, sans-serif;
+    color:var(--ink);
+    background:
+        radial-gradient(1100px 500px at 100% -10%, #efe9fb, transparent 60%),
+        radial-gradient(900px 460px at -5% 5%, #e3f6f4, transparent 60%),
+        var(--page);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+
+/* ===================== TOP TOOLBAR (screen only) ===================== */
+.toolbar{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+    padding:12px 22px;
+    background:rgba(255,255,255,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+}
+.tb-brand{ display:flex; align-items:center; gap:12px; margin-right:auto; }
+.tb-brand img{ height:40px; }
+.tb-brand strong{ font-size:16px; color:var(--purple-deep); display:block; line-height:1.1; }
+.tb-brand span{ font-size:12px; color:var(--muted); }
+
+.tb-field{ display:flex; flex-direction:column; gap:3px; }
+.tb-field label{ font-size:11px; font-weight:800; letter-spacing:.4px; text-transform:uppercase; color:var(--purple-deep); }
+.tb-field input{
+    min-width:190px; padding:8px 11px; font:inherit;
+    border:1.5px solid #d5d2e6; border-radius:9px; background:#fff; color:var(--ink);
+}
+.tb-field input:focus{ outline:none; border-color:var(--purple); box-shadow:0 0 0 3px rgba(139,127,240,.2); }
+
+.tb-sign{ display:flex; flex-direction:column; gap:3px; }
+.tb-sign label{ font-size:11px; font-weight:800; letter-spacing:.4px; text-transform:uppercase; color:var(--purple-deep); }
+.tb-sign-row{ display:flex; align-items:stretch; gap:8px; }
+#sigPad{ width:210px; height:60px; border:1.5px solid #d5d2e6; border-radius:9px; background:#fff; touch-action:none; }
+.tb-sign-btns{ display:flex; flex-direction:column; gap:5px; }
+
+button{ font:inherit; cursor:pointer; border:0; border-radius:9px; font-weight:700; }
+.btn-sm{ padding:6px 10px; font-size:12px; background:#eef0f7; color:#54506e; }
+.btn-sm:hover{ background:#e4e7f2; }
+.btn-primary{
+    padding:11px 20px; font-size:14px; font-weight:800; color:#fff;
+    background:linear-gradient(120deg, var(--purple), #7a6fe0);
+    box-shadow:0 6px 16px rgba(123,111,224,.32);
+}
+.btn-primary:hover{ filter:brightness(1.05); }
+.btn-primary:disabled{ background:#c8c4dc; box-shadow:none; cursor:not-allowed; }
+
+/* document quick-nav */
+.docnav{ display:flex; gap:8px; padding:10px 22px 0; flex-wrap:wrap; }
+.docnav a{
+    text-decoration:none; font-size:13px; font-weight:700; color:var(--purple-deep);
+    padding:7px 14px; border-radius:999px; background:#fff; border:1px solid var(--line);
+}
+.docnav a:hover{ background:var(--field); }
+
+/* ===================== SHEETS (screen) ===================== */
+.sheets{ padding:22px 16px 60px; display:flex; flex-direction:column; align-items:center; gap:26px; }
+
+.sheet{
+    position:relative; width:var(--sheet-w); min-height:1123px;   /* A4 height @96dpi (297mm) */
+    background:#fff; border-radius:5px; overflow:hidden;
+    box-shadow:0 18px 46px rgba(60,48,110,.18);
+}
+.doc{ width:100%; border-collapse:collapse; }
+.banner-cell{ padding:0; }
+.sheet-banner{ width:100%; display:block; }
+.doc-cell{ padding:14px var(--mgn) 64px; vertical-align:top; }
+.sheet-mark{
+    position:absolute; top:52%; left:50%; transform:translate(-50%,-50%);
+    width:58%; opacity:.06; pointer-events:none; user-select:none; z-index:0;
+}
+.sheet-body{ position:relative; z-index:1; }
+
+/* ===================== DOCUMENT TYPOGRAPHY ===================== */
+.doc-title{
+    font-size:25px; color:var(--purple-deep); font-weight:800; letter-spacing:.2px;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid #ece8f8; position:relative;
+}
+.doc-title::after{ content:""; position:absolute; left:0; bottom:-2px; width:66px; height:2px; background:linear-gradient(90deg,var(--purple),var(--teal)); }
+.doc-h2{
+    font-size:15px; font-weight:800; color:var(--purple-ink); line-height:1.25;
+    margin:24px 0 10px; padding-left:11px; border-left:3px solid var(--teal);
+}
+.sheet-body p{ font-size:13px; line-height:1.55; margin:0 0 11px; color:#34314f; }
+.sheet-body ol.legal{ margin:0 0 12px; padding-left:26px; }
+.sheet-body ol.legal li{ font-size:13.2px; line-height:1.5; margin-bottom:8px; }
+.sheet-body ul.bullets{ margin:0 0 12px; padding-left:22px; }
+.sheet-body ul.bullets li{ font-size:12.8px; line-height:1.45; margin-bottom:5px; }
+.signblock{ margin-top:26px; }
+.signblock p{ font-size:13.5px; }
+.small{ font-size:12px; color:var(--muted); }
+
+/* fill-in inputs (inline) */
+.f{
+    font-family:inherit; font-size:13.2px; color:var(--purple-ink); font-weight:600;
+    border:0; background:var(--fill); box-shadow:inset 0 0 0 1px var(--fill-line);
+    border-radius:3px; padding:2px 8px; min-width:120px;
+}
+.f:hover{ background:var(--fill-hover); }
+.f:focus{ outline:none; background:var(--fill-focus); box-shadow:inset 0 0 0 1.5px var(--teal-deep); }
+.f.grow{ width:100%; }
+.f.mid{ width:260px; }
+.f.name-inline{ width:340px; }
+/* free-text fields are auto-growing textareas so long content WRAPS instead of clipping */
+textarea.f{
+    display:block; width:100%; min-width:0; resize:none; overflow:hidden;
+    white-space:pre-wrap; overflow-wrap:break-word; word-break:break-word;
+    line-height:1.4; height:25px; min-height:25px; vertical-align:top;
+}
+
+/* two-column label/field rows (e.g. Employee Name / Signature / Date) */
+.rowgrid{ display:grid; grid-template-columns:170px 1fr; gap:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; margin:8px 0 4px; }
+.rowgrid .cell-l{ background:#f6f5fc; font-weight:700; font-size:13px; color:var(--purple-ink); padding:11px 14px; border-bottom:1px solid var(--line); display:flex; align-items:center; }
+.rowgrid .cell-r{ padding:8px 12px; border-bottom:1px solid var(--line); display:flex; align-items:center; }
+.rowgrid .cell-l:last-of-type, .rowgrid .cell-r:last-child{ border-bottom:0; }
+.rowgrid .f{ width:100%; }
+
+/* acknowledgement checkbox line — custom control (real elements, prints reliably) */
+.ack{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; cursor:pointer; }
+.ack input{ position:absolute; width:0; height:0; opacity:0; }
+.ack .cbox{
+    flex:none; width:22px; height:22px; margin-top:1px;
+    border:1.8px solid var(--purple); border-radius:6px; background:#fff;
+    display:inline-flex; align-items:center; justify-content:center;
+}
+.ack .cbox::after{
+    content:""; width:6px; height:11px; margin-top:-2px;
+    border:solid var(--teal-deep); border-width:0 2.6px 2.6px 0;
+    transform:rotate(45deg); opacity:0;
+}
+.ack input:checked + .cbox{ border-color:var(--teal-deep); background:#e9faf7; }
+.ack input:checked + .cbox::after{ opacity:1; }
+.ack input:focus-visible + .cbox{ box-shadow:0 0 0 3px rgba(139,127,240,.32); }
+.ack .cbtxt{ font-size:13.2px; line-height:1.5; }
+
+/* signature slot */
+.sig-slot{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:100%; height:56px; background:var(--fill); box-shadow:inset 0 0 0 1px var(--fill-line);
+    border-radius:3px; color:var(--teal-deep); font-size:12px; font-style:italic;
+}
+.sig-slot:not(.filled):hover{ background:var(--fill-hover); }
+.sig-slot img{ max-width:100%; max-height:52px; }
+.sig-slot.filled{ background:transparent; box-shadow:none; }
+
+/* section note (Arete-completed, not the employee's to fill) */
+.arete-note{ font-size:11.5px; color:var(--muted); font-style:italic; margin:2px 0 8px; }
+
+/* ---------- Details-form components ---------- */
+.fsec{ border:1px solid var(--line); border-radius:11px; overflow:hidden; margin:12px 0 20px; }
+.fsec-head{ background:linear-gradient(120deg,#efeafb,#e6f5f3); color:var(--purple-deep); font-weight:800; font-size:13.5px; letter-spacing:.2px; padding:10px 15px; border-bottom:1px solid var(--line); border-left:4px solid var(--purple); }
+.fgrid{ display:grid; grid-template-columns:170px 1fr; }
+.fgrid.two{ grid-template-columns:150px 1fr 140px 1fr; }
+.fgrid .fk{ padding:7px 14px; font-size:12.6px; font-weight:700; color:var(--purple-ink); background:#faf9fe; border-top:1px solid var(--line); display:flex; align-items:center; }
+.fgrid .fv{ padding:4px 12px; border-top:1px solid var(--line); display:flex; align-items:center; }
+.fgrid > .fk:first-child, .fgrid > .fk:first-child ~ .fv:nth-child(2), .fgrid.two > *:nth-child(-n+4){ border-top:0; }
+.fgrid .f{ width:100%; }
+.fnote{ font-size:11px; color:var(--muted); }
+
+/* Yes/No (and choice) question rows */
+.qrow{ display:flex; align-items:flex-start; gap:14px; padding:7px 2px; border-bottom:1px dashed var(--line); }
+.qrow:last-child{ border-bottom:0; }
+.qrow .q{ flex:1; font-size:12.8px; line-height:1.35; }
+.opts{ display:flex; gap:14px; flex:none; }
+.opt{ display:inline-flex; align-items:center; gap:6px; font-size:12.6px; font-weight:700; color:var(--purple-ink); white-space:nowrap; cursor:pointer; }
+/* custom radio (background-drawn, prints reliably) */
+.opt input[type=radio]{
+    appearance:none; -webkit-appearance:none; margin:0;
+    width:16px; height:16px; flex:none; border:1.7px solid var(--purple);
+    border-radius:50%; background:#fff;
+}
+.opt input[type=radio]:checked{
+    border-color:var(--teal-deep);
+    background:radial-gradient(circle at center, var(--teal-deep) 0 42%, #fff 47%);
+}
+.opt input[type=radio]:focus-visible{ box-shadow:0 0 0 3px rgba(139,127,240,.32); }
+
+/* free-text areas */
+.ta{ width:100%; min-height:50px; font-family:inherit; font-size:12.8px; color:var(--purple-ink); border:1px solid var(--fill-line); border-radius:8px; background:var(--fill); padding:7px 10px; resize:none; overflow:hidden; }
+.ta:hover{ background:var(--fill-hover); }
+.ta:focus{ outline:none; border-color:var(--teal-deep); background:var(--fill-focus); }
+.ta::placeholder{ color:var(--muted); font-style:italic; }
+.qhead{ font-size:12.8px; font-weight:700; color:var(--purple-ink); margin:14px 0 5px; }
+
+/* grid tables (availability, referees, employment dates) */
+table.grid{ width:100%; border-collapse:collapse; margin:6px 0 16px; break-inside:avoid; }
+table.grid th{ background:#efeafb; color:var(--purple-deep); font-size:11.5px; font-weight:800; padding:7px 9px; border:1px solid var(--line); text-align:left; }
+table.grid td{ border:1px solid var(--line); padding:3px 7px; vertical-align:middle; }
+table.grid td.lbl{ background:#faf9fe; font-weight:700; font-size:12.4px; color:var(--purple-ink); white-space:nowrap; }
+table.grid .f{ width:100%; }
+
+/* employment history block */
+.job{ border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:0 0 14px; break-inside:avoid; }
+.job h4{ margin:0 0 8px; font-size:13px; color:var(--purple-deep); }
+.daterow{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12.6px; }
+.daterow .f{ width:120px; }
+
+/* ---------- Official ATO form pages (real PDF rendered + field overlays) ---------- */
+.sheet--pdf{ padding:0; overflow:hidden; display:flex; align-items:flex-start; justify-content:center; }
+.pdfpage{ position:relative; width:100%; line-height:0; }
+.pdfpage canvas{ width:100%; height:auto; display:block; }
+
+/* fill-in field on an ATO form */
+.ato-f{
+    position:absolute; box-sizing:border-box; margin:0;
+    border:0; border-radius:2px; background:var(--fill);
+    box-shadow:inset 0 0 0 1px var(--fill-line);
+    color:#11253f; font-family:inherit; font-weight:600;
+    font-size:clamp(7px, 1.35vw, 12px); line-height:1; padding:0 3px;
+}
+.ato-f:hover{ background:var(--fill-hover); }
+.ato-f:focus{ outline:none; background:var(--fill-focus); box-shadow:inset 0 0 0 1.5px var(--teal-deep); }
+
+/* comb field: one character per box the form draws.
+   The transparent input takes the typing; the cells render the characters. */
+.ato-comb{ position:absolute; }
+.ato-comb-input{
+    position:absolute; inset:0; width:100%; height:100%;
+    margin:0; padding:0; border:0; border-radius:2px;
+    background:var(--fill); box-shadow:inset 0 0 0 1px var(--fill-line);
+    color:transparent; caret-color:transparent;
+    font: inherit; letter-spacing:0;
+}
+/* the box you're typing into */
+.ato-comb-cells span.caret{ background:rgba(58,156,163,.42); border-radius:2px; box-shadow:inset 0 0 0 1.4px var(--teal-deep); }
+.ato-comb-input:hover{ background:var(--fill-hover); }
+.ato-comb-input:focus{ outline:none; background:var(--fill-focus); box-shadow:inset 0 0 0 1.5px var(--teal-deep); }
+.ato-comb-cells{ position:absolute; inset:0; pointer-events:none; }
+.ato-comb-cells span{
+    position:absolute; top:0; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Courier New", monospace; font-weight:600; color:#11253f; line-height:1;
+}
+
+/* clickable tick sitting on the form's own box: invisible until ticked */
+.ato-tick{
+    position:absolute; padding:0; min-height:0; display:grid; place-items:center;
+    border:0; border-radius:2px; background:var(--fill);
+    box-shadow:inset 0 0 0 1px var(--fill-line); cursor:pointer;
+    line-height:0; transition:background .12s;
+}
+.ato-tick::before{ content:"\2713"; font-weight:900; color:transparent; font-size:clamp(8px, 1.5vw, 14px); }
+.ato-tick:hover{ background:var(--fill-hover); }
+.ato-tick.checked{ background:transparent; box-shadow:none; }
+.ato-tick.checked::before{ color:#0f2d3a; }
+
+/* signature drop area on an ATO form */
+.ato-sig{ position:absolute; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+.ato-sig img{ max-width:100%; max-height:100%; object-fit:contain; }
+.ato-sig.hidden{ display:none; }
+
+/* ===================== PRINT: the downloaded PDF ===================== */
+#print-frame{ display:none; }
+
+@media print{
+    /* Small page margins; the banner sits in each document's <thead>, which the
+       browser repeats at the top of every printed page, reserving its own space. */
+    /* No page margins: the letterhead banner bleeds to the page edge (as in the
+       source template) and the ATO form pages can occupy the full A4 sheet.
+       Arete side/bottom margins are handled by .doc-cell padding below. */
+    @page{ size:A4; margin:0; }
+
+    body{ background:#fff; }
+    .toolbar, .docnav, .no-print{ display:none !important; }
+
+    .sheets{ padding:0; gap:0; }
+    .sheet{
+        width:auto; box-shadow:none; border-radius:0;
+        overflow:visible; break-before:page;
+    }
+    .sheet:first-of-type{ break-before:auto; }
+    /* each Arete sheet is exactly one page, so keep it near page height so the
+       watermark sits mid-page (must stay under the printable area to avoid spill) */
+    .sheet:not(.sheet--pdf){ min-height:980px; }
+    .sheet-mark{ display:block; }                /* per-sheet watermark (Arete pages only) */
+    .doc{ width:100%; }
+    thead{ display:table-header-group; }         /* repeat the banner on every page */
+    .doc-cell{ padding:10px 62px 46px; }         /* side + bottom margins for Arete pages */
+
+    /* the Arete watermark must never appear on an official ATO form */
+    #print-frame{ display:none !important; }
+
+    /* ATO pages: the real form, sized to fill one A4 page exactly.
+       Height-driven (slightly under A4) so rounding can never spill to page 2;
+       .pdfpage shrink-wraps the canvas so the % overlays stay aligned. */
+    .sheet--pdf{ break-before:page; padding:0; min-height:auto; overflow:hidden;
+                 display:flex; justify-content:center; align-items:flex-start; }
+    .sheet--pdf .pdfpage{ width:auto; height:1120px; }
+    .sheet--pdf .pdfpage canvas{ width:auto; height:100%; }
+    .ato-f, .ato-tick, .ato-comb-input{ background:transparent !important; box-shadow:none !important; }
+    .ato-f{ color:#000; }
+    .ato-f::placeholder{ color:transparent !important; }
+    .ato-comb-cells span{ color:#000; }
+    .ato-comb-cells span.caret{ background:transparent !important; box-shadow:none !important; }
+
+    /* keep grouped blocks intact across page breaks */
+    .rowgrid, .signblock, .ack, .doc-title{ break-inside:avoid; }
+    .doc-h2{ break-after:avoid; }
+    ol.legal li, ul.bullets li{ break-inside:avoid; }
+
+    /* fills render as clean text, no boxes */
+    .f, .sig-slot{ background:transparent !important; box-shadow:none !important; border-bottom:1px solid #999; border-radius:0; }
+    .f{ color:#000; }
+    .rowgrid .f, .fgrid .f, table.grid .f{ border-bottom:0 !important; }
+    .ta{ background:transparent !important; border:1px solid #bbb; color:#000; }
+    .f::placeholder, .ta::placeholder{ color:transparent !important; }  /* empty fields print blank */
+    table.grid, .job, .qrow, .fgrid .fk, .fgrid .fv, .fsec-head{ break-inside:avoid; }
+    .fsec-head{ break-after:avoid; }
+
+    /* custom checkbox/radio are real elements + backgrounds, so they print as-is */
+    .ack .cbox, .opt input[type=radio]{ box-shadow:none !important; }
+}

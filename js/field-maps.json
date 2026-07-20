@@ -1,0 +1,5559 @@
+{
+ "docs": [
+  {
+   "key": "details",
+   "label": "New Employee Details Form",
+   "file": "New Employee Details Form.pdf",
+   "engine": "flat",
+   "fields": [
+    {
+     "id": "firstName",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      142,
+      409.9,
+      558,
+      422.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "middleName",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      152,
+      439.2,
+      558,
+      452.2
+     ],
+     "size": 10
+    },
+    {
+     "id": "lastName",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      140,
+      468.6,
+      558,
+      481.6
+     ],
+     "size": 10
+    },
+    {
+     "id": "dob",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      150,
+      497.9,
+      290,
+      510.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "startDate",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      140,
+      527.2,
+      295,
+      540.2
+     ],
+     "size": 10
+    },
+    {
+     "id": "positionTitle",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      378,
+      527.2,
+      558,
+      540.2
+     ],
+     "size": 10
+    },
+    {
+     "id": "carRego",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      392,
+      552.1,
+      558,
+      565.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "homeAddress",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      155,
+      589.4,
+      558,
+      602.4
+     ],
+     "size": 10
+    },
+    {
+     "id": "suburb1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      122,
+      625.9,
+      300,
+      638.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "state1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      343,
+      625.9,
+      430,
+      638.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "postcode1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      132,
+      662.5,
+      280,
+      675.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "homePhone1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      377,
+      662.5,
+      520,
+      675.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "mobile1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      121,
+      698.9,
+      290,
+      711.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "email1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      344,
+      698.9,
+      558,
+      711.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "nokName",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      173,
+      166.5,
+      558,
+      179.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "relationship",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      148,
+      203.1,
+      558,
+      216.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "address2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      127,
+      239.6,
+      558,
+      252.6
+     ],
+     "size": 10
+    },
+    {
+     "id": "suburb2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      123,
+      276.1,
+      320,
+      289.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "state2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      366,
+      276.1,
+      460,
+      289.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "postcode2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      133,
+      312.6,
+      320,
+      325.6
+     ],
+     "size": 10
+    },
+    {
+     "id": "homePhone2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      404,
+      312.6,
+      520,
+      325.6
+     ],
+     "size": 10
+    },
+    {
+     "id": "mobile2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      122,
+      349.1,
+      300,
+      362.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "positionAppliedFor",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      185,
+      124.5,
+      520,
+      137.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "job1Employer",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      145,
+      632.6,
+      300,
+      645.6
+     ],
+     "size": 10
+    },
+    {
+     "id": "job1Position",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      350,
+      633.5,
+      520,
+      646.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "job1DateFrom",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      150,
+      726.8,
+      285,
+      739.8
+     ],
+     "size": 10
+    },
+    {
+     "id": "job1DateTo",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      322,
+      726.8,
+      410,
+      739.8
+     ],
+     "size": 10
+    },
+    {
+     "id": "job2Employer",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      170,
+      192.3,
+      305,
+      205.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "job2Position",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      366,
+      192.3,
+      520,
+      205.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "job2DateFrom",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      150,
+      289.9,
+      285,
+      302.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "job2DateTo",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      320,
+      289.9,
+      410,
+      302.9
+     ],
+     "size": 10
+    },
+    {
+     "id": "job2Duties",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      200,
+      311.3,
+      558,
+      324.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "job3Employer",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      170,
+      403.0,
+      305,
+      416.0
+     ],
+     "size": 10
+    },
+    {
+     "id": "job3Position",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      366,
+      403.0,
+      520,
+      416.0
+     ],
+     "size": 10
+    },
+    {
+     "id": "job3DateFrom",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      150,
+      484.3,
+      285,
+      497.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "job3DateTo",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      320,
+      484.3,
+      410,
+      497.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "job3Duties",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      200,
+      502.2,
+      558,
+      515.2
+     ],
+     "size": 10
+    },
+    {
+     "id": "otherSkills",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      80,
+      152,
+      558,
+      165
+     ],
+     "size": 10
+    },
+    {
+     "id": "howAware",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      80,
+      242,
+      558,
+      255
+     ],
+     "size": 10
+    },
+    {
+     "id": "importantResp",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      80,
+      312,
+      558,
+      325
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref1Name",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      102,
+      438,
+      193,
+      451
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref1Position",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      197,
+      438,
+      312,
+      451
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref1Org",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      316,
+      438,
+      432,
+      451
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref1Tel",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      436,
+      438,
+      545,
+      451
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref2Name",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      102,
+      473,
+      193,
+      486
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref2Position",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      197,
+      473,
+      312,
+      486
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref2Org",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      316,
+      473,
+      432,
+      486
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref2Tel",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      436,
+      473,
+      545,
+      486
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref3Name",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      102,
+      508,
+      193,
+      521
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref3Position",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      197,
+      508,
+      312,
+      521
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref3Org",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      316,
+      508,
+      432,
+      521
+     ],
+     "size": 10
+    },
+    {
+     "id": "ref3Tel",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      436,
+      508,
+      545,
+      521
+     ],
+     "size": 10
+    },
+    {
+     "id": "visaType",
+     "type": "text",
+     "page": 6,
+     "rect": [
+      225,
+      260.4,
+      520,
+      273.4
+     ],
+     "size": 10
+    },
+    {
+     "id": "expiryD",
+     "type": "text",
+     "page": 6,
+     "rect": [
+      133,
+      287.4,
+      158,
+      300.4
+     ],
+     "size": 10
+    },
+    {
+     "id": "expiryM",
+     "type": "text",
+     "page": 6,
+     "rect": [
+      172,
+      287.4,
+      210,
+      300.4
+     ],
+     "size": 10
+    },
+    {
+     "id": "expiryY",
+     "type": "text",
+     "page": 6,
+     "rect": [
+      220,
+      287.4,
+      285,
+      300.4
+     ],
+     "size": 10
+    },
+    {
+     "id": "convictionDetails",
+     "type": "text",
+     "page": 7,
+     "rect": [
+      80,
+      225,
+      558,
+      238
+     ],
+     "size": 10
+    },
+    {
+     "id": "availMonStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      158.3,
+      360,
+      171.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "availMonEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      158.3,
+      520,
+      171.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "availTueStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      183.3,
+      360,
+      196.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "availTueEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      183.3,
+      520,
+      196.3
+     ],
+     "size": 10
+    },
+    {
+     "id": "availWedStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      208.5,
+      360,
+      221.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "availWedEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      208.5,
+      520,
+      221.5
+     ],
+     "size": 10
+    },
+    {
+     "id": "availThuStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      233.7,
+      360,
+      246.7
+     ],
+     "size": 10
+    },
+    {
+     "id": "availThuEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      233.7,
+      520,
+      246.7
+     ],
+     "size": 10
+    },
+    {
+     "id": "availFriStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      258.8,
+      360,
+      271.8
+     ],
+     "size": 10
+    },
+    {
+     "id": "availFriEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      258.8,
+      520,
+      271.8
+     ],
+     "size": 10
+    },
+    {
+     "id": "availSatStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      284.0,
+      360,
+      297.0
+     ],
+     "size": 10
+    },
+    {
+     "id": "availSatEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      284.0,
+      520,
+      297.0
+     ],
+     "size": 10
+    },
+    {
+     "id": "availSunStart",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      210,
+      309.1,
+      360,
+      322.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "availSunEnd",
+     "type": "text",
+     "page": 8,
+     "rect": [
+      372,
+      309.1,
+      520,
+      322.1
+     ],
+     "size": 10
+    },
+    {
+     "id": "applicantSignature",
+     "type": "signature",
+     "page": 9,
+     "rect": [
+      150,
+      360,
+      305,
+      397
+     ],
+     "role": "sign",
+     "label": "Applicant signature"
+    },
+    {
+     "id": "applicantDate",
+     "type": "text",
+     "page": 9,
+     "rect": [
+      384,
+      369.8,
+      478,
+      383.8
+     ],
+     "size": 11,
+     "role": "date",
+     "cover": [
+      377,
+      369,
+      472,
+      385
+     ],
+     "label": "Date"
+    },
+    {
+     "id": "yn_p3_0_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      244.5,
+      416.9,
+      255.5
+     ],
+     "group": "yn_p3_0",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_0_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      244.5,
+      488.9,
+      255.5
+     ],
+     "group": "yn_p3_0",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_1_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      280.5,
+      416.9,
+      291.5
+     ],
+     "group": "yn_p3_1",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_1_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      280.5,
+      488.9,
+      291.5
+     ],
+     "group": "yn_p3_1",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_2_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      316.5,
+      416.9,
+      327.5
+     ],
+     "group": "yn_p3_2",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_2_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      316.5,
+      488.9,
+      327.5
+     ],
+     "group": "yn_p3_2",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_3_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      352.5,
+      416.9,
+      363.5
+     ],
+     "group": "yn_p3_3",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_3_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      352.5,
+      488.9,
+      363.5
+     ],
+     "group": "yn_p3_3",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_4_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      388.5,
+      416.9,
+      399.5
+     ],
+     "group": "yn_p3_4",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_4_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      388.5,
+      488.9,
+      399.5
+     ],
+     "group": "yn_p3_4",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_5_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      424.5,
+      416.9,
+      435.5
+     ],
+     "group": "yn_p3_5",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_5_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      424.5,
+      488.9,
+      435.5
+     ],
+     "group": "yn_p3_5",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_6_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      460.5,
+      416.9,
+      471.5
+     ],
+     "group": "yn_p3_6",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_6_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      460.5,
+      488.9,
+      471.5
+     ],
+     "group": "yn_p3_6",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_7_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      496.5,
+      416.9,
+      507.5
+     ],
+     "group": "yn_p3_7",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_7_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      496.5,
+      488.9,
+      507.5
+     ],
+     "group": "yn_p3_7",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_8_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      532.5,
+      416.9,
+      543.5
+     ],
+     "group": "yn_p3_8",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_8_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      532.5,
+      488.9,
+      543.5
+     ],
+     "group": "yn_p3_8",
+     "label": "No"
+    },
+    {
+     "id": "yn_p3_9_yes",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      405.8,
+      570.7,
+      416.9,
+      581.7
+     ],
+     "group": "yn_p3_9",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p3_9_no",
+     "type": "radio",
+     "page": 3,
+     "rect": [
+      477.8,
+      570.7,
+      488.9,
+      581.7
+     ],
+     "group": "yn_p3_9",
+     "label": "No"
+    },
+    {
+     "id": "yn_p4_0_yes",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      417.0,
+      599.6,
+      428.0,
+      610.7
+     ],
+     "group": "yn_p4_0",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p4_0_no",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      495.6,
+      599.6,
+      506.6,
+      610.7
+     ],
+     "group": "yn_p4_0",
+     "label": "No"
+    },
+    {
+     "id": "yn_p4_1_yes",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      417.8,
+      646.4,
+      428.9,
+      657.5
+     ],
+     "group": "yn_p4_1",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p4_1_no",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      497.1,
+      646.4,
+      508.2,
+      657.5
+     ],
+     "group": "yn_p4_1",
+     "label": "No"
+    },
+    {
+     "id": "yn_p4_2_yes",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      417.5,
+      675.5,
+      428.5,
+      686.5
+     ],
+     "group": "yn_p4_2",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p4_2_no",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      496.8,
+      675.5,
+      507.8,
+      686.5
+     ],
+     "group": "yn_p4_2",
+     "label": "No"
+    },
+    {
+     "id": "yn_p4_3_yes",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      417.6,
+      704.3,
+      428.6,
+      715.3
+     ],
+     "group": "yn_p4_3",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p4_3_no",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      496.9,
+      704.3,
+      507.9,
+      715.3
+     ],
+     "group": "yn_p4_3",
+     "label": "No"
+    },
+    {
+     "id": "yn_p4_4_yes",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      418.3,
+      733.1,
+      429.3,
+      744.1
+     ],
+     "group": "yn_p4_4",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p4_4_no",
+     "type": "radio",
+     "page": 4,
+     "rect": [
+      497.1,
+      733.1,
+      508.2,
+      744.1
+     ],
+     "group": "yn_p4_4",
+     "label": "No"
+    },
+    {
+     "id": "yn_p6_0_yes",
+     "type": "radio",
+     "page": 6,
+     "rect": [
+      302.8,
+      214.3,
+      313.9,
+      225.4
+     ],
+     "group": "yn_p6_0",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p6_0_no",
+     "type": "radio",
+     "page": 6,
+     "rect": [
+      430.5,
+      214.3,
+      441.6,
+      225.4
+     ],
+     "group": "yn_p6_0",
+     "label": "No"
+    },
+    {
+     "id": "yn_p7_0_yes",
+     "type": "radio",
+     "page": 7,
+     "rect": [
+      455.0,
+      158.1,
+      464.5,
+      172.4
+     ],
+     "group": "yn_p7_0",
+     "label": "Yes"
+    },
+    {
+     "id": "yn_p7_0_no",
+     "type": "radio",
+     "page": 7,
+     "rect": [
+      485.0,
+      158.1,
+      494.5,
+      172.4
+     ],
+     "group": "yn_p7_0",
+     "label": "No"
+    },
+    {
+     "id": "gender_male",
+     "type": "radio",
+     "page": 1,
+     "rect": [
+      127.4,
+      560.0,
+      134.8,
+      567.4
+     ],
+     "group": "gender",
+     "label": "Male"
+    },
+    {
+     "id": "gender_female",
+     "type": "radio",
+     "page": 1,
+     "rect": [
+      169.3,
+      560.0,
+      176.8,
+      567.4
+     ],
+     "group": "gender",
+     "label": "Female"
+    }
+   ],
+   "pageSizes": [
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ],
+    [
+     596,
+     842
+    ]
+   ]
+  },
+  {
+   "key": "tfn",
+   "label": "TFN Declaration Form",
+   "file": "TFN Declaration Form.pdf",
+   "engine": "acroform",
+   "fields": [
+    {
+     "id": "1-TFN",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      134.8,
+      92.6,
+      291.4,
+      111.8
+     ],
+     "size": 10,
+     "acro": {
+      "name": "1-TFN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 9
+    },
+    {
+     "id": "1-Q__separate",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      278.1,
+      118.1,
+      290.2,
+      134.5
+     ],
+     "acro": {
+      "name": "1-Q",
+      "on": "separate"
+     },
+     "group": "1-Q",
+     "label": "1-Q=separate"
+    },
+    {
+     "id": "1-Q__exempt1",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      278.1,
+      142.0,
+      290.2,
+      158.5
+     ],
+     "acro": {
+      "name": "1-Q",
+      "on": "exempt1"
+     },
+     "group": "1-Q",
+     "label": "1-Q=exempt1"
+    },
+    {
+     "id": "1-Q__exempt2",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      278.1,
+      166.2,
+      290.2,
+      182.6
+     ],
+     "acro": {
+      "name": "1-Q",
+      "on": "exempt2"
+     },
+     "group": "1-Q",
+     "label": "1-Q=exempt2"
+    },
+    {
+     "id": "2-title__Mr",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      150.7,
+      191.6,
+      162.8,
+      208.1
+     ],
+     "acro": {
+      "name": "2-title",
+      "on": "Mr"
+     },
+     "group": "2-title",
+     "label": "2-title=Mr"
+    },
+    {
+     "id": "2-title__Mrs",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      193.2,
+      191.6,
+      205.3,
+      208.1
+     ],
+     "acro": {
+      "name": "2-title",
+      "on": "Mrs"
+     },
+     "group": "2-title",
+     "label": "2-title=Mrs"
+    },
+    {
+     "id": "2-title__Miss",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      235.5,
+      191.6,
+      247.6,
+      208.1
+     ],
+     "acro": {
+      "name": "2-title",
+      "on": "Miss"
+     },
+     "group": "2-title",
+     "label": "2-title=Miss"
+    },
+    {
+     "id": "2-title__Ms",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      278.1,
+      191.6,
+      290.2,
+      208.1
+     ],
+     "acro": {
+      "name": "2-title",
+      "on": "Ms"
+     },
+     "group": "2-title",
+     "label": "2-title=Ms"
+    },
+    {
+     "id": "2-familyName",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.3,
+      218.7,
+      291.3,
+      234.8
+     ],
+     "size": 10,
+     "acro": {
+      "name": "2-familyName"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "2-firstName",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.3,
+      245.5,
+      291.3,
+      261.5
+     ],
+     "size": 10,
+     "acro": {
+      "name": "2-firstName"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "2-otherName",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.3,
+      272.5,
+      291.3,
+      288.6
+     ],
+     "size": 10,
+     "acro": {
+      "name": "2-otherName"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "3-addressLine1",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.9,
+      310.8,
+      292.0,
+      326.8
+     ],
+     "size": 10,
+     "acro": {
+      "name": "3-addressLine1"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "3-addressLine2",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.9,
+      335.0,
+      292.0,
+      351.0
+     ],
+     "size": 10,
+     "acro": {
+      "name": "3-addressLine2"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "3-addressSuburb",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.9,
+      361.4,
+      292.0,
+      377.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "3-addressSuburb"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "3-addressState",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      22.4,
+      387.1,
+      65.3,
+      401.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "3-addressState"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       64.8,
+       77.6
+      ]
+     ],
+     "maxlen": 4
+    },
+    {
+     "id": "3-addressPostcode",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      93.5,
+      387.1,
+      149.9,
+      401.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "3-addressPostcode"
+     },
+     "comb": true,
+     "cells": [
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ]
+     ],
+     "maxlen": 4
+    },
+    {
+     "id": "4-nameChange",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.3,
+      433.2,
+      291.3,
+      449.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "4-nameChange"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.5,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "5-addressLine1",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      314.8,
+      94.1,
+      584.9,
+      110.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "5-addressLine1"
+     },
+     "comb": true,
+     "cells": [
+      [
+       316.3,
+       328.6
+      ],
+      [
+       330.5,
+       342.7
+      ],
+      [
+       344.6,
+       356.9
+      ],
+      [
+       358.8,
+       371.0
+      ],
+      [
+       373.0,
+       385.3
+      ],
+      [
+       387.2,
+       399.4
+      ],
+      [
+       401.4,
+       413.6
+      ],
+      [
+       415.5,
+       427.8
+      ],
+      [
+       429.7,
+       442.0
+      ],
+      [
+       443.9,
+       456.1
+      ],
+      [
+       458.0,
+       470.3
+      ],
+      [
+       472.2,
+       484.5
+      ],
+      [
+       486.4,
+       498.6
+      ],
+      [
+       500.6,
+       512.8
+      ],
+      [
+       514.7,
+       527.0
+      ],
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "5-addressLine2",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      314.8,
+      119.9,
+      584.9,
+      136.0
+     ],
+     "size": 10,
+     "acro": {
+      "name": "5-addressLine2"
+     },
+     "comb": true,
+     "cells": [
+      [
+       316.3,
+       328.6
+      ],
+      [
+       330.5,
+       342.7
+      ],
+      [
+       344.6,
+       356.9
+      ],
+      [
+       358.8,
+       371.0
+      ],
+      [
+       373.0,
+       385.3
+      ],
+      [
+       387.2,
+       399.4
+      ],
+      [
+       401.4,
+       413.6
+      ],
+      [
+       415.5,
+       427.8
+      ],
+      [
+       429.7,
+       442.0
+      ],
+      [
+       443.9,
+       456.1
+      ],
+      [
+       458.0,
+       470.3
+      ],
+      [
+       472.2,
+       484.5
+      ],
+      [
+       486.4,
+       498.6
+      ],
+      [
+       500.6,
+       512.8
+      ],
+      [
+       514.7,
+       527.0
+      ],
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "4-dateDay",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      454.6,
+      152.9,
+      483.2,
+      167.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "4-dateDay"
+     },
+     "comb": true,
+     "cells": [
+      [
+       455.2,
+       467.5
+      ],
+      [
+       469.4,
+       481.6
+      ]
+     ],
+     "maxlen": 2
+    },
+    {
+     "id": "4-dateMonth",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      491.1,
+      152.9,
+      519.8,
+      167.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "4-dateMonth"
+     },
+     "comb": true,
+     "cells": [
+      [
+       492.1,
+       504.3
+      ],
+      [
+       506.2,
+       518.5
+      ]
+     ],
+     "maxlen": 2
+    },
+    {
+     "id": "4-dateYear",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      528.0,
+      152.9,
+      585.6,
+      167.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "4-dateYear"
+     },
+     "comb": true,
+     "cells": [
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ],
+     "maxlen": 4
+    },
+    {
+     "id": "6-Q__full-time",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      356.2,
+      188.7,
+      368.3,
+      205.2
+     ],
+     "acro": {
+      "name": "6-Q",
+      "on": "full-time"
+     },
+     "group": "6-Q",
+     "label": "6-Q=full-time"
+    },
+    {
+     "id": "6-Q__part-time",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      411.2,
+      188.7,
+      423.3,
+      205.2
+     ],
+     "acro": {
+      "name": "6-Q",
+      "on": "part-time"
+     },
+     "group": "6-Q",
+     "label": "6-Q=part-time"
+    },
+    {
+     "id": "6-Q__labour",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      449.7,
+      188.7,
+      461.8,
+      205.2
+     ],
+     "acro": {
+      "name": "6-Q",
+      "on": "labour"
+     },
+     "group": "6-Q",
+     "label": "6-Q=labour"
+    },
+    {
+     "id": "6-Q__super",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      516.2,
+      188.7,
+      528.3,
+      205.2
+     ],
+     "acro": {
+      "name": "6-Q",
+      "on": "super"
+     },
+     "group": "6-Q",
+     "label": "6-Q=super"
+    },
+    {
+     "id": "6-Q__casual",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      571.6,
+      188.7,
+      583.7,
+      205.2
+     ],
+     "acro": {
+      "name": "6-Q",
+      "on": "casual"
+     },
+     "group": "6-Q",
+     "label": "6-Q=casual"
+    },
+    {
+     "id": "7-Q__Aust#20resident",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      384.3,
+      228.4,
+      396.4,
+      244.9
+     ],
+     "acro": {
+      "name": "7-Q",
+      "on": "Aust#20resident"
+     },
+     "group": "7-Q",
+     "label": "7-Q=Aust#20resident"
+    },
+    {
+     "id": "7-Q__foreign#20resident",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      469.5,
+      227.8,
+      481.6,
+      244.9
+     ],
+     "acro": {
+      "name": "7-Q",
+      "on": "foreign#20resident"
+     },
+     "group": "7-Q",
+     "label": "7-Q=foreign#20resident"
+    },
+    {
+     "id": "7-Q__working#20holiday#20maker",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      571.9,
+      228.3,
+      584.0,
+      244.7
+     ],
+     "acro": {
+      "name": "7-Q",
+      "on": "working#20holiday#20maker"
+     },
+     "group": "7-Q",
+     "label": "7-Q=working#20holiday#20maker"
+    },
+    {
+     "id": "8-Q__yes",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      330.4,
+      291.6,
+      342.5,
+      308.0
+     ],
+     "acro": {
+      "name": "8-Q",
+      "on": "yes"
+     },
+     "group": "8-Q",
+     "label": "8-Q=yes"
+    },
+    {
+     "id": "8-Q__no",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      367.6,
+      291.6,
+      379.7,
+      308.0
+     ],
+     "acro": {
+      "name": "8-Q",
+      "on": "no"
+     },
+     "group": "8-Q",
+     "label": "8-Q=no"
+    },
+    {
+     "id": "9-Q__yes",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      330.7,
+      350.6,
+      342.8,
+      367.1
+     ],
+     "acro": {
+      "name": "9-Q",
+      "on": "yes"
+     },
+     "group": "9-Q",
+     "label": "9-Q=yes"
+    },
+    {
+     "id": "9-Q__no",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      571.5,
+      350.6,
+      583.6,
+      367.1
+     ],
+     "acro": {
+      "name": "9-Q",
+      "on": "no"
+     },
+     "group": "9-Q",
+     "label": "9-Q=no"
+    },
+    {
+     "id": "b1-ABN",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      22.0,
+      511.3,
+      221.0,
+      530.6
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b1-ABN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.3
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.8
+      ],
+      [
+       93.8,
+       106.0
+      ],
+      [
+       122.1,
+       134.4
+      ],
+      [
+       136.3,
+       148.5
+      ],
+      [
+       150.5,
+       162.7
+      ],
+      [
+       178.8,
+       191.1
+      ],
+      [
+       193.0,
+       205.2
+      ],
+      [
+       207.2,
+       219.4
+      ]
+     ],
+     "maxlen": 11,
+     "readonly": true,
+     "value": "45 611 123 454"
+    },
+    {
+     "id": "b1-branchNumber",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      243.4,
+      514.0,
+      286.6,
+      528.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b1-branchNumber"
+     },
+     "comb": true,
+     "cells": [
+      [
+       244.0,
+       256.3
+      ],
+      [
+       258.2,
+       270.5
+      ],
+      [
+       272.4,
+       284.6
+      ]
+     ],
+     "maxlen": 3
+    },
+    {
+     "id": "b2-Q__yes",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      239.9,
+      538.9,
+      252.0,
+      555.4
+     ],
+     "acro": {
+      "name": "b2-Q",
+      "on": "yes"
+     },
+     "group": "b2-Q",
+     "label": "b2-Q=yes"
+    },
+    {
+     "id": "b2-Q__no",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      278.3,
+      538.9,
+      290.4,
+      555.4
+     ],
+     "acro": {
+      "name": "b2-Q",
+      "on": "no"
+     },
+     "group": "b2-Q",
+     "label": "b2-Q=no"
+    },
+    {
+     "id": "b3-nameLine1",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.9,
+      584.5,
+      292.0,
+      600.5
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b3-nameLine1"
+     },
+     "comb": true,
+     "cells": [
+      [
+       23.0,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.8
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.9,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.5
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.6,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.2
+      ],
+      [
+       278.1,
+       290.3
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "PT&PT PTY LTD"
+    },
+    {
+     "id": "b3-nameLine2",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.9,
+      608.4,
+      292.0,
+      624.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b3-nameLine2"
+     },
+     "comb": true,
+     "cells": [
+      [
+       23.0,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.8
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.9,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.5
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.6,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.2
+      ],
+      [
+       278.1,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "b3-nameLine3",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      21.3,
+      632.1,
+      291.3,
+      648.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b3-nameLine3"
+     },
+     "comb": true,
+     "cells": [
+      [
+       23.0,
+       35.2
+      ],
+      [
+       37.1,
+       49.4
+      ],
+      [
+       51.3,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.6,
+       91.9
+      ],
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ],
+      [
+       150.5,
+       162.8
+      ],
+      [
+       164.7,
+       176.9
+      ],
+      [
+       178.9,
+       191.1
+      ],
+      [
+       193.0,
+       205.3
+      ],
+      [
+       207.2,
+       219.5
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.6,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.2
+      ],
+      [
+       278.1,
+       290.3
+      ]
+     ],
+     "maxlen": 19
+    },
+    {
+     "id": "b4-addressLine1",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      22.1,
+      668.4,
+      292.2,
+      684.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b4-addressLine1"
+     },
+     "comb": true,
+     "cells": [
+      [
+       23.0,
+       35.2
+      ],
+      [
+       37.1,
+       49.3
+      ],
+      [
+       51.2,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.7,
+       91.9
+      ],
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.4,
+       148.6
+      ],
+      [
+       150.5,
+       162.8
+      ],
+      [
+       164.6,
+       176.9
+      ],
+      [
+       178.9,
+       191.1
+      ],
+      [
+       193.0,
+       205.2
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.6,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "23/22-30 Wallace"
+    },
+    {
+     "id": "b4-addressLine2",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      22.1,
+      693.8,
+      292.2,
+      709.9
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b4-addressLine2"
+     },
+     "comb": true,
+     "cells": [
+      [
+       23.0,
+       35.2
+      ],
+      [
+       37.1,
+       49.3
+      ],
+      [
+       51.2,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.7,
+       91.9
+      ],
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.4,
+       148.6
+      ],
+      [
+       150.5,
+       162.8
+      ],
+      [
+       164.6,
+       176.9
+      ],
+      [
+       178.9,
+       191.1
+      ],
+      [
+       193.0,
+       205.2
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.6,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "Ave"
+    },
+    {
+     "id": "b4-addressSuburb",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      22.1,
+      720.8,
+      292.2,
+      736.8
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b4-addressSuburb"
+     },
+     "comb": true,
+     "cells": [
+      [
+       23.0,
+       35.2
+      ],
+      [
+       37.1,
+       49.3
+      ],
+      [
+       51.2,
+       63.5
+      ],
+      [
+       65.4,
+       77.7
+      ],
+      [
+       79.7,
+       91.9
+      ],
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.4,
+       148.6
+      ],
+      [
+       150.5,
+       162.8
+      ],
+      [
+       164.6,
+       176.9
+      ],
+      [
+       178.9,
+       191.1
+      ],
+      [
+       193.0,
+       205.2
+      ],
+      [
+       207.2,
+       219.4
+      ],
+      [
+       221.4,
+       233.6
+      ],
+      [
+       235.6,
+       247.8
+      ],
+      [
+       249.7,
+       262.0
+      ],
+      [
+       263.9,
+       276.1
+      ],
+      [
+       278.0,
+       290.3
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "Point Cook Victoria"
+    },
+    {
+     "id": "b4-addressState",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      22.6,
+      747.0,
+      65.6,
+      761.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b4-addressState"
+     },
+     "comb": true,
+     "cells": [
+      [
+       22.9,
+       35.2
+      ],
+      [
+       37.1,
+       49.3
+      ],
+      [
+       51.3,
+       63.6
+      ],
+      [
+       65.0,
+       77.9
+      ]
+     ],
+     "maxlen": 4
+    },
+    {
+     "id": "b4-addressPostcode",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      93.7,
+      747.0,
+      150.1,
+      761.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b4-addressPostcode"
+     },
+     "comb": true,
+     "cells": [
+      [
+       93.8,
+       106.1
+      ],
+      [
+       108.0,
+       120.2
+      ],
+      [
+       122.2,
+       134.4
+      ],
+      [
+       136.3,
+       148.6
+      ]
+     ],
+     "maxlen": 4,
+     "readonly": true,
+     "value": "3030"
+    },
+    {
+     "id": "b5-nameLine1",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      314.9,
+      503.0,
+      585.0,
+      519.0
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b5-nameLine1"
+     },
+     "comb": true,
+     "cells": [
+      [
+       316.3,
+       328.6
+      ],
+      [
+       330.5,
+       342.7
+      ],
+      [
+       344.6,
+       356.9
+      ],
+      [
+       358.8,
+       371.0
+      ],
+      [
+       373.0,
+       385.3
+      ],
+      [
+       387.2,
+       399.4
+      ],
+      [
+       401.4,
+       413.6
+      ],
+      [
+       415.5,
+       427.8
+      ],
+      [
+       429.7,
+       442.0
+      ],
+      [
+       443.9,
+       456.1
+      ],
+      [
+       458.0,
+       470.3
+      ],
+      [
+       472.2,
+       484.5
+      ],
+      [
+       486.4,
+       498.6
+      ],
+      [
+       500.6,
+       512.8
+      ],
+      [
+       514.7,
+       527.0
+      ],
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "accounts@aretecare."
+    },
+    {
+     "id": "b5-nameLine2",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      314.9,
+      528.6,
+      585.0,
+      544.6
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b5-nameLine2"
+     },
+     "comb": true,
+     "cells": [
+      [
+       316.3,
+       328.6
+      ],
+      [
+       330.5,
+       342.7
+      ],
+      [
+       344.6,
+       356.9
+      ],
+      [
+       358.8,
+       371.0
+      ],
+      [
+       373.0,
+       385.3
+      ],
+      [
+       387.2,
+       399.4
+      ],
+      [
+       401.4,
+       413.6
+      ],
+      [
+       415.5,
+       427.8
+      ],
+      [
+       429.7,
+       442.0
+      ],
+      [
+       443.9,
+       456.1
+      ],
+      [
+       458.0,
+       470.3
+      ],
+      [
+       472.2,
+       484.5
+      ],
+      [
+       486.4,
+       498.6
+      ],
+      [
+       500.6,
+       512.8
+      ],
+      [
+       514.7,
+       527.0
+      ],
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "com.au"
+    },
+    {
+     "id": "b5-contactPerson",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      314.9,
+      564.2,
+      585.0,
+      580.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b5-contactPerson"
+     },
+     "comb": true,
+     "cells": [
+      [
+       316.3,
+       328.6
+      ],
+      [
+       330.5,
+       342.7
+      ],
+      [
+       344.6,
+       356.9
+      ],
+      [
+       358.8,
+       371.0
+      ],
+      [
+       373.0,
+       385.2
+      ],
+      [
+       387.2,
+       399.4
+      ],
+      [
+       401.3,
+       413.6
+      ],
+      [
+       415.5,
+       427.8
+      ],
+      [
+       429.7,
+       441.9
+      ],
+      [
+       443.9,
+       456.1
+      ],
+      [
+       458.0,
+       470.3
+      ],
+      [
+       472.2,
+       484.5
+      ],
+      [
+       486.4,
+       498.6
+      ],
+      [
+       500.6,
+       512.8
+      ],
+      [
+       514.7,
+       527.0
+      ],
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ],
+     "maxlen": 19,
+     "readonly": true,
+     "value": "Pinki Tokas"
+    },
+    {
+     "id": "b5-contactPhone",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      400.2,
+      588.3,
+      542.4,
+      604.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "b5-contactPhone"
+     },
+     "comb": true,
+     "cells": [
+      [
+       401.3,
+       413.6
+      ],
+      [
+       415.5,
+       427.8
+      ],
+      [
+       429.7,
+       442.0
+      ],
+      [
+       443.9,
+       456.1
+      ],
+      [
+       458.1,
+       470.3
+      ],
+      [
+       472.2,
+       484.5
+      ],
+      [
+       486.4,
+       498.7
+      ],
+      [
+       500.6,
+       512.8
+      ],
+      [
+       514.8,
+       527.0
+      ],
+      [
+       528.9,
+       541.2
+      ]
+     ],
+     "maxlen": 10,
+     "readonly": true,
+     "value": "0370318610"
+    },
+    {
+     "id": "b6-Q__x",
+     "type": "checkbox",
+     "page": 5,
+     "rect": [
+      557.4,
+      613.6,
+      569.5,
+      630.1
+     ],
+     "acro": {
+      "name": "b6-Q",
+      "on": "x"
+     },
+     "group": "b6-Q",
+     "label": "b6-Q=x"
+    },
+    {
+     "id": "tfnSign",
+     "type": "signature",
+     "page": 5,
+     "rect": [
+      310,
+      399,
+      446,
+      423
+     ],
+     "role": "sign",
+     "label": "Signature (payee)"
+    },
+    {
+     "id": "tfnDateD",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      455.2,
+      410.7,
+      481.6,
+      427.2
+     ],
+     "size": 10,
+     "role": "dateD",
+     "label": "Date (day)",
+     "comb": true,
+     "maxlen": 2,
+     "cells": [
+      [
+       455.2,
+       467.5
+      ],
+      [
+       469.4,
+       481.6
+      ]
+     ]
+    },
+    {
+     "id": "tfnDateM",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      492.1,
+      410.7,
+      518.5,
+      427.2
+     ],
+     "size": 10,
+     "role": "dateM",
+     "label": "Date (month)",
+     "comb": true,
+     "maxlen": 2,
+     "cells": [
+      [
+       492.1,
+       504.3
+      ],
+      [
+       506.2,
+       518.5
+      ]
+     ]
+    },
+    {
+     "id": "tfnDateY",
+     "type": "text",
+     "page": 5,
+     "rect": [
+      528.9,
+      410.7,
+      583.7,
+      427.2
+     ],
+     "size": 10,
+     "role": "dateY",
+     "label": "Date (year)",
+     "comb": true,
+     "maxlen": 4,
+     "cells": [
+      [
+       528.9,
+       541.2
+      ],
+      [
+       543.1,
+       555.3
+      ],
+      [
+       557.3,
+       569.5
+      ],
+      [
+       571.4,
+       583.7
+      ]
+     ]
+    }
+   ],
+   "pageSizes": [
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ]
+   ]
+  },
+  {
+   "key": "super",
+   "label": "Superannuation Declaration Form",
+   "file": "Superannuation Declaration Form.pdf",
+   "engine": "acroform",
+   "fields": [
+    {
+     "id": "A-FullName",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      307.5,
+      398.0,
+      566.4,
+      415.0
+     ],
+     "size": 10,
+     "acro": {
+      "name": "A-FullName"
+     },
+     "role": "name"
+    },
+    {
+     "id": "A-EmployeeNo",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      307.3,
+      436.2,
+      534.2,
+      453.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "A-EmployeeNo"
+     },
+     "comb": true,
+     "cells": [
+      [
+       307.8,
+       320.1
+      ],
+      [
+       322.0,
+       334.3
+      ],
+      [
+       336.2,
+       348.4
+      ],
+      [
+       350.4,
+       362.6
+      ],
+      [
+       364.5,
+       376.8
+      ],
+      [
+       378.7,
+       391.0
+      ],
+      [
+       392.9,
+       405.1
+      ],
+      [
+       407.1,
+       419.3
+      ],
+      [
+       421.2,
+       433.5
+      ],
+      [
+       435.4,
+       447.7
+      ],
+      [
+       449.6,
+       461.8
+      ],
+      [
+       463.7,
+       476.0
+      ],
+      [
+       477.9,
+       490.2
+      ],
+      [
+       492.1,
+       504.3
+      ],
+      [
+       506.3,
+       518.5
+      ],
+      [
+       520.4,
+       532.7
+      ]
+     ],
+     "maxlen": 16
+    },
+    {
+     "id": "A-TFN",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      306.0,
+      473.4,
+      462.6,
+      492.5
+     ],
+     "size": 10,
+     "acro": {
+      "name": "A-TFN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       307.8,
+       320.1
+      ],
+      [
+       322.0,
+       334.3
+      ],
+      [
+       336.2,
+       348.4
+      ],
+      [
+       364.5,
+       376.8
+      ],
+      [
+       378.7,
+       391.0
+      ],
+      [
+       392.9,
+       405.1
+      ],
+      [
+       421.2,
+       433.5
+      ],
+      [
+       435.4,
+       447.7
+      ],
+      [
+       449.6,
+       461.8
+      ]
+     ],
+     "maxlen": 9
+    },
+    {
+     "id": "A-SuperChoice__Section#20B",
+     "type": "checkbox",
+     "page": 1,
+     "rect": [
+      316.3,
+      592.9,
+      329.0,
+      610.0
+     ],
+     "acro": {
+      "name": "A-SuperChoice",
+      "on": "Section#20B"
+     },
+     "group": "A-SuperChoice",
+     "label": "A-SuperChoice=Section#20B"
+    },
+    {
+     "id": "A-SuperChoice__Section#20C",
+     "type": "checkbox",
+     "page": 1,
+     "rect": [
+      316.3,
+      666.0,
+      329.0,
+      683.0
+     ],
+     "acro": {
+      "name": "A-SuperChoice",
+      "on": "Section#20C"
+     },
+     "group": "A-SuperChoice",
+     "label": "A-SuperChoice=Section#20C"
+    },
+    {
+     "id": "A-SuperChoice__Section#20D",
+     "type": "checkbox",
+     "page": 1,
+     "rect": [
+      316.3,
+      738.7,
+      329.0,
+      755.7
+     ],
+     "acro": {
+      "name": "A-SuperChoice",
+      "on": "Section#20D"
+     },
+     "group": "A-SuperChoice",
+     "label": "A-SuperChoice=Section#20D"
+    },
+    {
+     "id": "B-SuperFundName",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      28.3,
+      165.6,
+      566.4,
+      182.5
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-SuperFundName"
+     }
+    },
+    {
+     "id": "B-ABN",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      27.3,
+      203.2,
+      226.3,
+      221.7
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-ABN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       28.6,
+       40.9
+      ],
+      [
+       42.8,
+       55.0
+      ],
+      [
+       71.1,
+       83.4
+      ],
+      [
+       85.3,
+       97.5
+      ],
+      [
+       99.5,
+       111.7
+      ],
+      [
+       127.8,
+       140.1
+      ],
+      [
+       142.0,
+       154.2
+      ],
+      [
+       156.2,
+       168.4
+      ],
+      [
+       184.5,
+       196.8
+      ],
+      [
+       198.7,
+       210.9
+      ],
+      [
+       212.8,
+       225.1
+      ]
+     ],
+     "maxlen": 11
+    },
+    {
+     "id": "B-USI",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      28.5,
+      242.0,
+      226.6,
+      260.4
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-USI"
+     },
+     "comb": true,
+     "cells": [
+      [
+       28.6,
+       40.9
+      ],
+      [
+       42.8,
+       55.0
+      ],
+      [
+       56.9,
+       69.2
+      ],
+      [
+       71.1,
+       83.4
+      ],
+      [
+       85.3,
+       97.5
+      ],
+      [
+       99.5,
+       111.7
+      ],
+      [
+       113.6,
+       125.9
+      ],
+      [
+       127.8,
+       140.1
+      ],
+      [
+       142.0,
+       154.2
+      ],
+      [
+       156.2,
+       168.4
+      ],
+      [
+       170.3,
+       182.6
+      ],
+      [
+       184.5,
+       196.8
+      ],
+      [
+       198.7,
+       210.9
+      ],
+      [
+       212.8,
+       225.1
+      ]
+     ],
+     "maxlen": 14
+    },
+    {
+     "id": "B-MemberAccNo",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      27.7,
+      313.1,
+      254.6,
+      331.6
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-MemberAccNo"
+     },
+     "comb": true,
+     "cells": [
+      [
+       28.6,
+       40.9
+      ],
+      [
+       42.8,
+       55.0
+      ],
+      [
+       56.9,
+       69.2
+      ],
+      [
+       71.1,
+       83.4
+      ],
+      [
+       85.3,
+       97.5
+      ],
+      [
+       99.5,
+       111.7
+      ],
+      [
+       113.6,
+       125.9
+      ],
+      [
+       127.8,
+       140.1
+      ],
+      [
+       142.0,
+       154.2
+      ],
+      [
+       156.2,
+       168.4
+      ],
+      [
+       170.3,
+       182.6
+      ],
+      [
+       184.5,
+       196.8
+      ],
+      [
+       198.7,
+       210.9
+      ],
+      [
+       212.8,
+       225.1
+      ],
+      [
+       227.0,
+       239.3
+      ],
+      [
+       241.2,
+       253.5
+      ]
+     ],
+     "maxlen": 16
+    },
+    {
+     "id": "B-yourName",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      28.3,
+      385.2,
+      566.4,
+      402.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-yourName"
+     }
+    },
+    {
+     "id": "B-required__Attached",
+     "type": "checkbox",
+     "page": 2,
+     "rect": [
+      28.4,
+      512.8,
+      41.1,
+      529.8
+     ],
+     "acro": {
+      "name": "B-required",
+      "on": "Attached"
+     },
+     "group": "B-required",
+     "label": "B-required=Attached"
+    },
+    {
+     "id": "B-Day",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      426.0,
+      642.1,
+      454.6,
+      659.1
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-Day"
+     },
+     "comb": true,
+     "cells": [
+      [
+       426.9,
+       439.1
+      ],
+      [
+       441.0,
+       453.3
+      ]
+     ],
+     "maxlen": 2,
+     "role": "dateD",
+     "section": "B"
+    },
+    {
+     "id": "B-Month",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      468.5,
+      642.1,
+      497.2,
+      659.1
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-Month"
+     },
+     "comb": true,
+     "cells": [
+      [
+       469.4,
+       481.6
+      ],
+      [
+       483.6,
+       495.8
+      ]
+     ],
+     "maxlen": 2,
+     "role": "dateM",
+     "section": "B"
+    },
+    {
+     "id": "B-Year",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      510.5,
+      642.1,
+      568.1,
+      659.1
+     ],
+     "size": 10,
+     "acro": {
+      "name": "B-Year"
+     },
+     "comb": true,
+     "cells": [
+      [
+       511.9,
+       524.2
+      ],
+      [
+       526.1,
+       538.3
+      ],
+      [
+       540.2,
+       552.5
+      ],
+      [
+       554.4,
+       566.7
+      ]
+     ],
+     "maxlen": 4,
+     "role": "dateY",
+     "section": "B"
+    },
+    {
+     "id": "C-BusinessName",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      48.6,
+      163.3,
+      549.2,
+      180.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-BusinessName"
+     },
+     "readonly": true,
+     "value": "Arete Care"
+    },
+    {
+     "id": "C-ABN",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      47.6,
+      201.1,
+      246.7,
+      219.5
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-ABN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       48.4,
+       60.7
+      ],
+      [
+       62.6,
+       74.9
+      ],
+      [
+       91.0,
+       103.2
+      ],
+      [
+       105.1,
+       117.4
+      ],
+      [
+       119.3,
+       131.6
+      ],
+      [
+       147.7,
+       159.9
+      ],
+      [
+       161.8,
+       174.1
+      ],
+      [
+       176.0,
+       188.3
+      ],
+      [
+       204.3,
+       216.6
+      ],
+      [
+       218.5,
+       230.8
+      ],
+      [
+       232.7,
+       244.9
+      ]
+     ],
+     "maxlen": 11,
+     "readonly": true,
+     "value": "45 611 123 454"
+    },
+    {
+     "id": "C-SuperFundName",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      48.7,
+      240.3,
+      549.2,
+      257.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-SuperFundName"
+     },
+     "readonly": true,
+     "value": "AustralianSuper"
+    },
+    {
+     "id": "C-SuperABN",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      48.3,
+      277.9,
+      247.4,
+      296.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-SuperABN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       48.4,
+       60.7
+      ],
+      [
+       62.6,
+       74.9
+      ],
+      [
+       91.0,
+       103.2
+      ],
+      [
+       105.1,
+       117.4
+      ],
+      [
+       119.3,
+       131.6
+      ],
+      [
+       147.7,
+       159.9
+      ],
+      [
+       161.8,
+       174.1
+      ],
+      [
+       176.0,
+       188.3
+      ],
+      [
+       204.3,
+       216.6
+      ],
+      [
+       218.5,
+       230.8
+      ],
+      [
+       232.7,
+       244.9
+      ]
+     ],
+     "maxlen": 11,
+     "readonly": true,
+     "value": "65 714 394 898"
+    },
+    {
+     "id": "C-USI",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      47.5,
+      316.4,
+      245.6,
+      334.8
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-USI"
+     },
+     "comb": true,
+     "cells": [
+      [
+       48.4,
+       60.7
+      ],
+      [
+       62.6,
+       74.9
+      ],
+      [
+       76.8,
+       89.0
+      ],
+      [
+       91.0,
+       103.2
+      ],
+      [
+       105.1,
+       117.4
+      ],
+      [
+       119.3,
+       131.6
+      ],
+      [
+       133.5,
+       145.7
+      ],
+      [
+       147.7,
+       159.9
+      ],
+      [
+       161.8,
+       174.1
+      ],
+      [
+       176.0,
+       188.3
+      ],
+      [
+       190.2,
+       202.4
+      ],
+      [
+       204.3,
+       216.6
+      ],
+      [
+       218.5,
+       230.8
+      ],
+      [
+       232.7,
+       244.9
+      ]
+     ],
+     "maxlen": 14,
+     "readonly": true,
+     "value": "STA0100AU"
+    },
+    {
+     "id": "C-Dec__no",
+     "type": "checkbox",
+     "page": 3,
+     "rect": [
+      28.3,
+      452.5,
+      41.0,
+      469.5
+     ],
+     "acro": {
+      "name": "C-Dec",
+      "on": "no"
+     },
+     "group": "C-Dec",
+     "label": "C-Dec=no"
+    },
+    {
+     "id": "C-Day",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      426.1,
+      525.9,
+      454.8,
+      542.9
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-Day"
+     },
+     "comb": true,
+     "cells": [
+      [
+       426.9,
+       439.1
+      ],
+      [
+       441.0,
+       453.3
+      ]
+     ],
+     "maxlen": 2,
+     "role": "dateD",
+     "section": "C"
+    },
+    {
+     "id": "C-Month",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      468.5,
+      525.9,
+      497.2,
+      542.9
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-Month"
+     },
+     "comb": true,
+     "cells": [
+      [
+       469.4,
+       481.6
+      ],
+      [
+       483.6,
+       495.8
+      ]
+     ],
+     "maxlen": 2,
+     "role": "dateM",
+     "section": "C"
+    },
+    {
+     "id": "C-Year",
+     "type": "text",
+     "page": 3,
+     "rect": [
+      510.5,
+      525.9,
+      568.1,
+      542.9
+     ],
+     "size": 10,
+     "acro": {
+      "name": "C-Year"
+     },
+     "comb": true,
+     "cells": [
+      [
+       511.9,
+       524.2
+      ],
+      [
+       526.1,
+       538.3
+      ],
+      [
+       540.2,
+       552.5
+      ],
+      [
+       554.4,
+       566.7
+      ]
+     ],
+     "maxlen": 4,
+     "role": "dateY",
+     "section": "C"
+    },
+    {
+     "id": "D-SMSFName",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      28.3,
+      96.5,
+      566.8,
+      113.5
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-SMSFName"
+     }
+    },
+    {
+     "id": "D-ABN",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      27.7,
+      133.8,
+      226.7,
+      153.0
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-ABN"
+     },
+     "comb": true,
+     "cells": [
+      [
+       28.6,
+       40.9
+      ],
+      [
+       42.8,
+       55.0
+      ],
+      [
+       71.1,
+       83.4
+      ],
+      [
+       85.3,
+       97.5
+      ],
+      [
+       99.5,
+       111.7
+      ],
+      [
+       127.8,
+       140.1
+      ],
+      [
+       142.0,
+       154.2
+      ],
+      [
+       156.2,
+       168.4
+      ],
+      [
+       184.5,
+       196.8
+      ],
+      [
+       198.7,
+       210.9
+      ],
+      [
+       212.8,
+       225.1
+      ]
+     ],
+     "maxlen": 11
+    },
+    {
+     "id": "D-SMSFESA",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      28.3,
+      173.7,
+      566.8,
+      190.7
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-SMSFESA"
+     }
+    },
+    {
+     "id": "D-name",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      28.3,
+      242.1,
+      566.8,
+      259.0
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-name"
+     }
+    },
+    {
+     "id": "D-BankAccountName",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      28.3,
+      321.9,
+      566.8,
+      338.9
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-BankAccountName"
+     }
+    },
+    {
+     "id": "D-BSB",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      27.3,
+      359.4,
+      113.0,
+      377.8
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-BSB"
+     },
+     "comb": true,
+     "cells": [
+      [
+       28.6,
+       40.9
+      ],
+      [
+       42.8,
+       55.0
+      ],
+      [
+       56.9,
+       69.2
+      ],
+      [
+       71.1,
+       83.4
+      ],
+      [
+       85.3,
+       97.5
+      ],
+      [
+       99.5,
+       111.7
+      ]
+     ],
+     "maxlen": 6
+    },
+    {
+     "id": "D-accountNumber",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      27.2,
+      398.1,
+      170.5,
+      417.2
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-accountNumber"
+     },
+     "comb": true,
+     "cells": [
+      [
+       28.6,
+       40.9
+      ],
+      [
+       42.8,
+       55.0
+      ],
+      [
+       56.9,
+       69.2
+      ],
+      [
+       71.1,
+       83.4
+      ],
+      [
+       85.3,
+       97.5
+      ],
+      [
+       99.5,
+       111.7
+      ],
+      [
+       113.6,
+       125.9
+      ],
+      [
+       127.8,
+       140.1
+      ],
+      [
+       142.0,
+       154.2
+      ],
+      [
+       156.2,
+       168.4
+      ]
+     ],
+     "maxlen": 10
+    },
+    {
+     "id": "D-Dec__no",
+     "type": "checkbox",
+     "page": 4,
+     "rect": [
+      28.3,
+      475.7,
+      41.0,
+      492.7
+     ],
+     "acro": {
+      "name": "D-Dec",
+      "on": "no"
+     },
+     "group": "D-Dec",
+     "label": "D-Dec=no"
+    },
+    {
+     "id": "D-Day",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      425.7,
+      580.3,
+      454.3,
+      597.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-Day"
+     },
+     "comb": true,
+     "cells": [
+      [
+       426.9,
+       439.1
+      ],
+      [
+       441.0,
+       453.3
+      ]
+     ],
+     "maxlen": 2,
+     "role": "dateD",
+     "section": "D"
+    },
+    {
+     "id": "D-Month",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      468.1,
+      580.3,
+      496.7,
+      597.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-Month"
+     },
+     "comb": true,
+     "cells": [
+      [
+       469.4,
+       481.6
+      ],
+      [
+       483.6,
+       495.8
+      ]
+     ],
+     "maxlen": 2,
+     "role": "dateM",
+     "section": "D"
+    },
+    {
+     "id": "D-Year",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      510.0,
+      580.3,
+      567.6,
+      597.3
+     ],
+     "size": 10,
+     "acro": {
+      "name": "D-Year"
+     },
+     "comb": true,
+     "cells": [
+      [
+       511.9,
+       524.2
+      ],
+      [
+       526.1,
+       538.3
+      ],
+      [
+       540.2,
+       552.5
+      ],
+      [
+       554.4,
+       566.7
+      ]
+     ],
+     "maxlen": 4,
+     "role": "dateY",
+     "section": "D"
+    },
+    {
+     "id": "superSignB",
+     "type": "signature",
+     "page": 2,
+     "rect": [
+      40,
+      610,
+      380,
+      654
+     ],
+     "role": "sign",
+     "section": "B",
+     "label": "Signature (Section B)"
+    },
+    {
+     "id": "superSignC",
+     "type": "signature",
+     "page": 3,
+     "rect": [
+      40,
+      494,
+      380,
+      539
+     ],
+     "role": "sign",
+     "section": "C",
+     "label": "Signature (Section C)"
+    },
+    {
+     "id": "superSignD",
+     "type": "signature",
+     "page": 4,
+     "rect": [
+      40,
+      548,
+      380,
+      593
+     ],
+     "role": "sign",
+     "section": "D",
+     "label": "Signature (Section D)"
+    }
+   ],
+   "pageSizes": [
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ],
+    [
+     595,
+     842
+    ]
+   ]
+  },
+  {
+   "key": "coc",
+   "label": "Code of Conduct incl. Ethics Agreement",
+   "file": "Code of Conduct Including Ethics Agreement.pdf",
+   "engine": "flat",
+   "fields": [
+    {
+     "id": "cocName",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      84,
+      562.5,
+      530,
+      576.5
+     ],
+     "size": 11,
+     "role": "name",
+     "label": "Full name"
+    },
+    {
+     "id": "cocSign",
+     "type": "signature",
+     "page": 4,
+     "rect": [
+      112,
+      600,
+      470,
+      628
+     ],
+     "role": "sign",
+     "label": "Signed"
+    },
+    {
+     "id": "cocDate",
+     "type": "text",
+     "page": 4,
+     "rect": [
+      102,
+      632.3,
+      430,
+      646.3
+     ],
+     "size": 11,
+     "role": "date",
+     "label": "Date"
+    }
+   ],
+   "pageSizes": [
+    [
+     612,
+     792
+    ],
+    [
+     612,
+     792
+    ],
+    [
+     612,
+     792
+    ],
+    [
+     612,
+     792
+    ]
+   ]
+  },
+  {
+   "key": "privacy",
+   "label": "Privacy & Confidentiality Agreement",
+   "file": "Privacy and Confidentiality Agreement.pdf",
+   "engine": "flat",
+   "fields": [
+    {
+     "id": "privName1",
+     "type": "text",
+     "page": 1,
+     "rect": [
+      84,
+      149.2,
+      330,
+      163.2
+     ],
+     "size": 11,
+     "role": "name",
+     "label": "Full name"
+    },
+    {
+     "id": "privAck",
+     "type": "checkbox",
+     "page": 2,
+     "rect": [
+      74.6,
+      146.6,
+      81.4,
+      153.4
+     ],
+     "label": "Acknowledgement"
+    },
+    {
+     "id": "privName2",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      198,
+      185.7,
+      430,
+      199.7
+     ],
+     "size": 11,
+     "role": "name",
+     "label": "Employee name"
+    },
+    {
+     "id": "privSign",
+     "type": "signature",
+     "page": 2,
+     "rect": [
+      192,
+      206,
+      430,
+      232
+     ],
+     "role": "sign",
+     "label": "Employee signature"
+    },
+    {
+     "id": "privDate",
+     "type": "text",
+     "page": 2,
+     "rect": [
+      115,
+      227.8,
+      300,
+      241.8
+     ],
+     "size": 11,
+     "role": "date",
+     "label": "Date"
+    }
+   ],
+   "pageSizes": [
+    [
+     612,
+     792
+    ],
+    [
+     612,
+     792
+    ]
+   ]
+  }
+ ]
+}

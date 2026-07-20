@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arete Care · New Employee Onboarding</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/letterhead/emblem.png">
+<script src="libs/signature_pad.umd.min.js"></script>
+
+<!-- Official ATO forms: rendered from the real PDFs (pdf.js) with our own field
+     overlays, so they print into the same single PDF as the Arete documents. -->
+<script src="libs/pdf.min.js"></script>
+<script src="js/field-maps.js"></script>
+<script src="js/pdf-data.js"></script>
+</head>
+<body>
+
+<!-- ============ TOOLBAR (screen only) ============ -->
+<header class="toolbar no-print">
+    <div class="tb-brand">
+        <img src="assets/letterhead/emblem.png" alt="Arete Care">
+        <div>
+            <strong>New Employee Onboarding</strong>
+            <span>Fill in the highlighted fields, sign once, download one PDF.</span>
+        </div>
+    </div>
+
+    <div class="tb-field">
+        <label for="identityName">Full legal name</label>
+        <input type="text" id="identityName" placeholder="e.g. Jane Maree Smith" autocomplete="name">
+    </div>
+    <div class="tb-field">
+        <label for="identityDate">Date (DD/MM/YYYY)</label>
+        <input type="text" id="identityDate" placeholder="DD/MM/YYYY" inputmode="numeric" maxlength="10" autocomplete="off">
+    </div>
+    <div class="tb-sign">
+        <label>Signature</label>
+        <div class="tb-sign-row">
+            <canvas id="sigPad"></canvas>
+            <div class="tb-sign-btns">
+                <button class="btn-sm" id="sigClear" type="button">Clear</button>
+                <button class="btn-sm" id="sigApply" type="button">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-primary" id="downloadBtn" type="button">Download PDF</button>
+</header>
+
+<nav class="docnav no-print">
+    <a href="#doc-details">1 · New Employee Details</a>
+    <a href="#doc-coc">2 · Code of Conduct</a>
+    <a href="#doc-privacy">3 · Privacy &amp; Confidentiality</a>
+    <a href="#doc-tfn">4 · TFN Declaration</a>
+    <a href="#doc-super">5 · Superannuation</a>
+</nav>
+
+<main class="sheets">
+
+    <!-- ============================================================= -->
+    <!-- NEW EMPLOYEE DETAILS FORM (HR: Application for Employment)     -->
+    <!-- ============================================================= -->
+    <section class="sheet" id="doc-details">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+            <h1 class="doc-title">New Employee Form</h1>
+            <div class="fgrid two" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:12px;">
+                <div class="fk">Date</div>
+                <div class="fv"><input class="f" data-fill="date" placeholder="DD/MM/YYYY"></div>
+                <div class="fk">Position applied for</div>
+                <div class="fv"><input class="f" placeholder="Role"></div>
+            </div>
+
+            <p class="small"><strong>Arete Care Contact Details</strong><br>
+                Address: Level 1, Suite 1/47 Burgundy St, Heidelberg, VIC 3084<br>
+                Contact: 03 8353 1837<br>
+                Email: HR@aretecare.com.au</p>
+            <p>Arete Care is an accommodation and community support service for people living with disability and complex support needs. Staff work with the people we support to optimize choice and control and thereby realize their dreams and aspirations. If you can support people in this way, we welcome your application.</p>
+            <p>The information that you provide will be used to assess your suitability for interview. Please complete this form accurately to assist us to assess your suitability for the position that you are applying for. This application should be supported by your CV and/or other application documentation.</p>
+
+            <!-- Personal Details -->
+            <div class="fsec">
+                <div class="fsec-head">Personal Details</div>
+                <div class="fgrid">
+                    <div class="fk">First Name</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Middle Name</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Last Name</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Date of Birth</div><div class="fv"><input class="f" placeholder="DD/MM/YYYY"></div>
+                    <div class="fk">Start Date</div><div class="fv"><input class="f" placeholder="DD/MM/YYYY"></div>
+                    <div class="fk">Position Title</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Identify as</div><div class="fv"><span class="opts">
+                        <label class="opt"><input type="radio" name="gender"> Male</label>
+                        <label class="opt"><input type="radio" name="gender"> Female</label>
+                    </span></div>
+                    <div class="fk">Car Registration</div><div class="fv"><textarea class="f" rows="1"></textarea> <span class="fnote">&nbsp;(for staff parking / car park)</span></div>
+                    <div class="fk">Home Address</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Suburb</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">State</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Postcode</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Home Phone</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Mobile</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Email</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                </div>
+            </div>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <!-- Emergency Contact -->
+            <div class="fsec">
+                <div class="fsec-head">Emergency Contact Details</div>
+                <div class="fgrid">
+                    <div class="fk">Next of Kin Name</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Relationship</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Address</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Suburb</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">State</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Postcode</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Home Phone</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                    <div class="fk">Mobile</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                </div>
+            </div>
+
+            <!-- Pre-Employment Criteria -->
+            <div class="fsec">
+                <div class="fsec-head">Pre-Employment Criteria (For Disability Support Worker)</div>
+                <div style="padding:10px 14px;">
+                    <p class="qhead">Do you have the following? (If yes, please attach a copy.)</p>
+                    <div class="qrow"><span class="q">Certificate III or IV Disability</span><span class="opts"><label class="opt"><input type="radio" name="q_cert"> Yes</label><label class="opt"><input type="radio" name="q_cert"> No</label></span></div>
+                    <div class="qrow"><span class="q">A current Victorian driver's licence</span><span class="opts"><label class="opt"><input type="radio" name="q_lic"> Yes</label><label class="opt"><input type="radio" name="q_lic"> No</label></span></div>
+                    <div class="qrow"><span class="q">NDIS workers screening check</span><span class="opts"><label class="opt"><input type="radio" name="q_ndis"> Yes</label><label class="opt"><input type="radio" name="q_ndis"> No</label></span></div>
+                    <div class="qrow"><span class="q">Current First Aid / CPR</span><span class="opts"><label class="opt"><input type="radio" name="q_fa"> Yes</label><label class="opt"><input type="radio" name="q_fa"> No</label></span></div>
+                    <div class="qrow"><span class="q">Current Manual Handling Certificate</span><span class="opts"><label class="opt"><input type="radio" name="q_mh"> Yes</label><label class="opt"><input type="radio" name="q_mh"> No</label></span></div>
+                    <div class="qrow"><span class="q">Physical fitness to perform the role of a Disability Support Worker</span><span class="opts"><label class="opt"><input type="radio" name="q_fit"> Yes</label><label class="opt"><input type="radio" name="q_fit"> No</label></span></div>
+                    <div class="qrow"><span class="q">Working with children's check</span><span class="opts"><label class="opt"><input type="radio" name="q_wwc"> Yes</label><label class="opt"><input type="radio" name="q_wwc"> No</label></span></div>
+                    <div class="qrow"><span class="q">Medication Assistance Certificate</span><span class="opts"><label class="opt"><input type="radio" name="q_med"> Yes</label><label class="opt"><input type="radio" name="q_med"> No</label></span></div>
+                    <div class="qrow"><span class="q">Mental Health First Aid Certificate</span><span class="opts"><label class="opt"><input type="radio" name="q_mhfa"> Yes</label><label class="opt"><input type="radio" name="q_mhfa"> No</label></span></div>
+                    <div class="qrow"><span class="q">If you do not have the above qualification, are you willing to attain it?</span><span class="opts"><label class="opt"><input type="radio" name="q_attain"> Yes</label><label class="opt"><input type="radio" name="q_attain"> No</label></span></div>
+                </div>
+            </div>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <!-- Employment History -->
+            <h2 class="doc-h2">Employment History <span class="fnote">(commence with your current or most recent position)</span></h2>
+            <div class="job">
+                <h4>1. Employer</h4>
+                <div class="fgrid"><div class="fk">Employer</div><div class="fv"><textarea class="f" rows="1"></textarea></div><div class="fk">Position</div><div class="fv"><textarea class="f" rows="1"></textarea></div></div>
+                <div class="daterow" style="margin-top:8px;">Date of employment: <input class="f" placeholder="From (DD/MM/YYYY)"> to <input class="f" placeholder="To (DD/MM/YYYY)"></div>
+                <p class="qhead">Duties / Responsibilities</p><textarea class="ta"></textarea>
+            </div>
+            <div class="job">
+                <h4>2. Employer</h4>
+                <div class="fgrid"><div class="fk">Employer</div><div class="fv"><textarea class="f" rows="1"></textarea></div><div class="fk">Position</div><div class="fv"><textarea class="f" rows="1"></textarea></div></div>
+                <div class="daterow" style="margin-top:8px;">Date of employment: <input class="f" placeholder="From (DD/MM/YYYY)"> to <input class="f" placeholder="To (DD/MM/YYYY)"></div>
+                <p class="qhead">Duties / Responsibilities</p><textarea class="ta"></textarea>
+            </div>
+            <div class="job">
+                <h4>3. Employer</h4>
+                <div class="fgrid"><div class="fk">Employer</div><div class="fv"><textarea class="f" rows="1"></textarea></div><div class="fk">Position</div><div class="fv"><textarea class="f" rows="1"></textarea></div></div>
+                <div class="daterow" style="margin-top:8px;">Date of employment: <input class="f" placeholder="From (DD/MM/YYYY)"> to <input class="f" placeholder="To (DD/MM/YYYY)"></div>
+                <p class="qhead">Duties / Responsibilities</p><textarea class="ta"></textarea>
+            </div>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <!-- Experience -->
+            <div class="fsec">
+                <div class="fsec-head">Experience</div>
+                <div style="padding:10px 14px;">
+                    <div class="qrow"><span class="q">Have you had previous experience working with people with a disability?</span><span class="opts"><label class="opt"><input type="radio" name="q_prev"> Yes</label><label class="opt"><input type="radio" name="q_prev"> No</label></span></div>
+                    <p class="qhead">Have you had experience working with the following?</p>
+                    <div class="qrow"><span class="q">Acquired Brain Injury</span><span class="opts"><label class="opt"><input type="radio" name="q_abi"> Yes</label><label class="opt"><input type="radio" name="q_abi"> No</label></span></div>
+                    <div class="qrow"><span class="q">Challenging behaviours</span><span class="opts"><label class="opt"><input type="radio" name="q_cb"> Yes</label><label class="opt"><input type="radio" name="q_cb"> No</label></span></div>
+                    <div class="qrow"><span class="q">Mental Health</span><span class="opts"><label class="opt"><input type="radio" name="q_mhx"> Yes</label><label class="opt"><input type="radio" name="q_mhx"> No</label></span></div>
+                    <div class="qrow"><span class="q">Aged Care</span><span class="opts"><label class="opt"><input type="radio" name="q_ac"> Yes</label><label class="opt"><input type="radio" name="q_ac"> No</label></span></div>
+                </div>
+            </div>
+
+            <p class="qhead">Please indicate any other personal skills or experience relevant to the position.</p>
+            <textarea class="ta"></textarea>
+            <p class="qhead">How did you become aware of the opportunity for employment at Arete Care?</p>
+            <textarea class="ta"></textarea>
+            <p class="qhead">What do you think is the most important responsibility of a Disability Support Worker?</p>
+            <textarea class="ta"></textarea>
+
+            <!-- Referees -->
+            <h2 class="doc-h2">Referees <span class="fnote">(three referees from whom confidential reports may be obtained)</span></h2>
+            <table class="grid">
+                <thead><tr><th>Name</th><th>Position</th><th>Organisation / Address</th><th>Telephone</th><th>Email</th></tr></thead>
+                <tbody>
+                    <tr><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                </tbody>
+            </table>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <!-- Right to work -->
+            <h2 class="doc-h2">Right to Work in Australia</h2>
+            <p>Arete Care requires proof of either Australian Citizenship or your legal entitlement to work in Australia. Acceptable proof of legal entitlement to work in Australia:</p>
+            <ul class="bullets">
+                <li><strong>Australian Citizen</strong> — Australian Citizenship Certificate; current Australian Passport; or an expired Australian Passport that was current in the last two years and has not been cancelled.</li>
+                <li><strong>Australian Permanent Resident</strong> — Foreign Passport with a valid permanent resident visa.</li>
+                <li><strong>New Zealanders</strong> — New Zealand Passport with a work rights visa.</li>
+                <li><strong>Non-Australian Citizen</strong> — Foreign Passport with a valid visa with permission to work.</li>
+            </ul>
+            <div class="qrow"><span class="q">Are you a Permanent Australian Citizen?</span><span class="opts"><label class="opt"><input type="radio" name="q_cit"> Yes</label><label class="opt"><input type="radio" name="q_cit"> No</label></span></div>
+            <div class="fgrid two" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:10px;">
+                <div class="fk">If not, Visa type</div><div class="fv"><textarea class="f" rows="1"></textarea></div>
+                <div class="fk">Expiry date</div><div class="fv"><input class="f" placeholder="DD/MM/YYYY"></div>
+            </div>
+
+            <!-- Convictions -->
+            <h2 class="doc-h2">Convictions</h2>
+            <p class="small">Only persons over the age of 18 years of age are obliged to complete this section.</p>
+            <div class="qrow"><span class="q">Have you been charged or convicted of a criminal offence?</span><span class="opts"><label class="opt"><input type="radio" name="q_conv"> Yes</label><label class="opt"><input type="radio" name="q_conv"> No</label></span></div>
+            <p class="qhead">If yes, please give details:</p>
+            <textarea class="ta"></textarea>
+
+            <!-- Availability -->
+            <h2 class="doc-h2">6 Months Availability</h2>
+            <table class="grid">
+                <thead><tr><th style="width:34%">Days</th><th>Start time</th><th>End time</th></tr></thead>
+                <tbody>
+                    <tr><td class="lbl">Monday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Tuesday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Wednesday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Thursday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Friday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Saturday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Sunday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                </tbody>
+            </table>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <!-- Privacy notice -->
+            <h2 class="doc-h2">Privacy</h2>
+            <p class="small">(in accordance with Australian Privacy Principles) The process used to assess your suitability as a Disability Support Worker for Arete Care requires you to complete this standard application form. We require some personal details such as your name, home address, telephone numbers, information about your past employers and two nominated referees. We require this information so that we can contact your referees to verify your past work experience, and contact you to advise you whether your application has been successful or not. Should you be successful your details can be entered into our computerised human resources information system for the effective administration of payroll and mandatory training. It is Arete Care's policy to check the visa status of non-permanent Australian residents and non-Australian citizens with the Department of Immigration. The personal information that we collect is accessed by only relevant staff members in the performance of their duties. The information is held in confidence by Arete Care except where the release of such information is required by law. None of the information collected is used for any purpose other than those outlined above. No information is disclosed to other organisations or persons outside Arete Care except with the written permission of the applicant.</p>
+
+            <!-- Applicant Declaration -->
+            <div class="signblock">
+                <h2 class="doc-h2">Applicant Declaration</h2>
+                <ol class="legal">
+                    <li>I will respect the confidentiality of any information I gain in the course of my employment with Arete Care.</li>
+                    <li>I understand that any appointment will include a probationary period and my employment could be terminated during the probation period.</li>
+                    <li>I accept that employment is subject to undertaking a medical assessment and NDIS screening clearance at my own expense.</li>
+                    <li>I understand that I will not engage in any external or private activities which will result in a conflict or potential conflict of interest with my Arete Care duties.</li>
+                    <li>I confirm that the information given on this form and provided by me in support of this application for employment is true and correct.</li>
+                    <li>I acknowledge that any willful suppression or inaccuracy may be sufficient cause for rejection or, if employed, will render me liable to instant dismissal and / or prosecution.</li>
+                </ol>
+                <div class="rowgrid">
+                    <div class="cell-l">Signature of Applicant</div>
+                    <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the toolbar, then press Apply</span></div>
+                    <div class="cell-l">Date</div>
+                    <div class="cell-r"><input class="f grow" data-fill="date" placeholder="DD/MM/YYYY"></div>
+                </div>
+                <p class="small" style="margin-top:10px;">This application will lapse after 3 months and must be renewed if you wish to remain on our records.</p>
+            </div>
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- CODE OF CONDUCT (incl. Ethics Agreement)                      -->
+    <!-- ============================================================= -->
+    <section class="sheet" id="doc-coc">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+            <h1 class="doc-title">Code of Conduct Agreement</h1>
+            <p><strong>Staff and Volunteer Agreement</strong></p>
+
+            <h2 class="doc-h2">1. The Code of Conduct Policy</h2>
+            <p>The Code of Conduct Policy requires the organisation's personnel to commit to:</p>
+            <ul class="bullets">
+                <li>Act with integrity.</li>
+                <li>Act honestly always.</li>
+                <li>Be transparent when making decisions or giving advice.</li>
+                <li>Ensure all actions can withstand scrutiny.</li>
+                <li>Respect and courtesy.</li>
+                <li>Respect the individual's rights to freedom of expression, self-determination, and decision-making in accordance with laws and conventions.</li>
+                <li>When dealing with one another, management, participants and service users, external stakeholders and other agency representatives, staff members will be respectful, honest and courteous.</li>
+                <li>Staff members will give accurate information and prompt attention and observe fairness and equity in their dealings with others.</li>
+                <li>Act fairly and equitably.</li>
+                <li>Respect others, their values and their rights.</li>
+                <li>Respect privacy and confidentiality.</li>
+                <li>Create a safe work environment that is free of abuse, violence, discrimination, harassment or victimisation.</li>
+            </ul>
+
+            <h2 class="doc-h2">1.1 NDIS Code of Conduct</h2>
+            <ul class="bullets">
+                <li>Act with respect for individual rights to freedom of expression, self-determination and decision-making in accordance with applicable laws and conventions.</li>
+                <li>Respect the privacy of people with disability.</li>
+                <li>Provide supports and services in a safe and competent manner, with care and skill.</li>
+                <li>Act with integrity, honesty and transparency.</li>
+                <li>Promptly take steps to raise and act on concerns about matters that may impact the quality and safety of supports and services provided to people with disability.</li>
+                <li>Take all reasonable steps to prevent and respond to all forms of violence against, and exploitation, neglect and abuse of, people with disability.</li>
+                <li>Take all reasonable steps to prevent and respond to sexual misconduct.</li>
+            </ul>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <h2 class="doc-h2">2. Working with Participants</h2>
+            <p>When interacting or working with people using our services, staff will:</p>
+            <ul class="bullets">
+                <li>Always treat service users with respect, and be mindful of their rights to privacy and confidentiality.</li>
+                <li>Always show respect for people's cultural or religious sensitivities or requirements, and ensure the responsiveness of the service to their needs and circumstances.</li>
+                <li>Uphold the rights of people with disability, including their rights as consumers.</li>
+                <li>Facilitate informed decision by participants in a person-centred approach which supports and reflects their preferences and expectations.</li>
+                <li>Ensure that service users are provided with, and understand, all information relevant to their situation, options available to them and conditions of use for the service.</li>
+                <li>Ensure they have access to independent advocacy or support if they require in making any decisions.</li>
+                <li>Be aware of personal boundaries and never enter a sexual relationship with a service user.</li>
+                <li>Treat all people in a manner that demonstrates respect and ensures their environment is safe, taking all reasonable steps to prevent any activities that will impact on the quality and safety of the services provided.</li>
+                <li>Report to supervisor any potential or real risks of harm to the person with a disability.</li>
+                <li>Not accept money or other gifts.</li>
+            </ul>
+
+            <h2 class="doc-h2">3. Standards in the Workplace</h2>
+            <p>All staff members are required to:</p>
+            <ul class="bullets">
+                <li>Attend work in the times agreed, notify delegate officer of their absences, report and account for all leave taken, record attendance and obtain approval before changing their work times.</li>
+                <li>Comply with the requirements of their duty statements and agreed work plans, paying appropriate attention to quality and detail in their work.</li>
+                <li>Provide accurate and honest information to delegated officer about work completed and challenges experienced in completing work.</li>
+                <li>Follow instructions that are reasonable and lawful and within their capability and training.</li>
+                <li>Report any suspected corrupt or fraudulent practices of others. Any staff member making a report will be protected from reprisal.</li>
+                <li>Observe the requirements for conditions of employment and safety as described in our Workplace Health and Safety Policy.</li>
+                <li>Perform their duties unaffected by alcohol or the use of drugs other than those prescribed for them by a medical practitioner.</li>
+                <li>Maintain a harmonious, co-operative and productive workplace, respectful of diversity.</li>
+                <li>Ensure they do not use their position to exert inappropriate influence over others.</li>
+            </ul>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <h2 class="doc-h2">4. Standards of Work</h2>
+            <p>All individuals will perform their duties as well as they can and at the highest level of professional conduct. They will be accountable for their work and their interactions with others.</p>
+            <p><strong>Accountability:</strong></p>
+            <ul class="bullets">
+                <li>Work within the goals and objectives of the organisation.</li>
+                <li>Follow the rules, policies and procedures of the organisation.</li>
+                <li>Act within the law.</li>
+                <li>Undertake all duties in a diligent manner.</li>
+                <li>Not act in a way that brings them or the organisation into disrepute.</li>
+            </ul>
+            <p><strong>Personal behaviours:</strong></p>
+            <ul class="bullets">
+                <li>Work cooperatively as a member of the team.</li>
+                <li>Support colleagues and treat everyone with respect and courtesy.</li>
+                <li>Discuss ethical concerns with colleagues and managers.</li>
+                <li>Project a positive image of the organisation.</li>
+                <li>Not be absent from duties without an appropriate reason.</li>
+                <li>Maintain confidentiality.</li>
+            </ul>
+
+            <h2 class="doc-h2">4.1 Confidentiality and Privacy</h2>
+            <p>All staff and management must respect and keep confidential internal matters of the organisation and respect the privacy of others.</p>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <h2 class="doc-h2">4.2 Harassment and Bullying</h2>
+            <p>Harassment and bullying are unacceptable and contrary to ethical behaviour. Additionally, harassment based on a person's sex, race, ethnic religious background, age, pregnancy, marital status, disability, transgender (transsexual) status or sexuality breaches anti-discrimination and human rights law.</p>
+            <p>Harassment in the workplace can take many forms. It can be obvious or subtle, direct or indirect. It includes:</p>
+            <ul class="bullets">
+                <li>Sexual or suggestive remarks or gestures.</li>
+                <li>Displaying or circulating sexually suggestive, offensive or degrading/insulting material (e.g. on walls, computer screen savers, email).</li>
+                <li>Making fun of someone, spreading rumours, and unwelcome practical jokes.</li>
+                <li>Obscene or unsolicited telephone calls, letters, faxes or email messages.</li>
+                <li>Invasion of personal space, unnecessary physical contact.</li>
+                <li>Continually ignoring or dismissing someone's contribution.</li>
+                <li>Pushing, shoving or jostling or assault.</li>
+                <li>Threats, insults, name calling, inappropriate language.</li>
+                <li>Creating a hostile feeling or environment, even when there are no direct attacks being made on a person.</li>
+            </ul>
+            <p>Complaints concerning harassment or bullying should be actioned according to the Compliments, Complaints/ Feedback Policy.</p>
+
+            <h2 class="doc-h2">4.3 Reporting Unethical Behaviour</h2>
+            <p>If a person believes that the behaviour of any staff member, or management is unethical they must report it to delegated officer.</p>
+            <p>Unethical behaviour is defined as:</p>
+            <ul class="bullets">
+                <li>Workplace behaviour that is contrary to our codes of ethics or conduct, and other workplace policies.</li>
+                <li>Workplace behaviour that violates any law, or is corrupt conduct or misconduct.</li>
+                <li>Mismanagement of resources or fraudulent behaviour.</li>
+                <li>Behaviour that creates a danger to public health or safety or the environment.</li>
+            </ul>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <h2 class="doc-h2">5. Teamwork</h2>
+            <p>Staff members will:</p>
+            <ul class="bullets">
+                <li>Work together towards agreed work objectives and goals and communicate regularly with one another about progress.</li>
+                <li>Work together to look for ways to improve work methods and to solve workplace and service related problems.</li>
+                <li>Give support and guidance to each other, ensure appropriate training and development and recognise each other's results and achievements.</li>
+            </ul>
+
+            <div class="signblock">
+                <p>I, <input class="f name-inline" data-fill="name" placeholder="Full name"> have read this Code of Conduct and agree to abide by all elements in this document.</p>
+                <div class="rowgrid" style="grid-template-columns:130px 1fr;">
+                    <div class="cell-l">Signed</div>
+                    <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the toolbar, then press Apply</span></div>
+                    <div class="cell-l">Date</div>
+                    <div class="cell-r"><input class="f grow" data-fill="date" placeholder="DD/MM/YYYY"></div>
+                </div>
+            </div>
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- PRIVACY & CONFIDENTIALITY AGREEMENT                           -->
+    <!-- ============================================================= -->
+    <section class="sheet" id="doc-privacy">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+            <h1 class="doc-title">Privacy and Confidentiality Agreement</h1>
+
+            <p>I, <input class="f name-inline" data-fill="name" placeholder="Full name"> agree to the following terms, which form part of my employment conditions.</p>
+            <p>The employee acknowledges that in the course of their employment at Arete Care they may have access or become acquainted with the written materials and other confidential health information, and agrees:</p>
+            <ol class="legal" type="a">
+                <li>To maintain the confidence of the confidential information and to prevent unauthorised disclosure to or use by any other person, film or company.</li>
+                <li>To only use confidential information for the purpose of carrying out their duties whether that be during employment or after it has ceased.</li>
+                <li>Not to remove any part of the confidential information from the premises of the employer without written consent of the employer.</li>
+                <li>Not for any reason appropriate, copy, memorize or in any manner reproduce or part with any confidential information.</li>
+                <li>On termination of their employment or else when required to do so by the employer, return any and all of the confidential information including any copy of that information, in whatever form that takes.</li>
+                <li>When borrowing manuals/information they will return it wholly and in good condition at the time required by the employer.</li>
+            </ol>
+            <p>I have read and understand the Privacy and Dignity Policy and Procedure, the Consent Policy and Procedure and the Information Management Policy and Procedure.</p>
+            <p>I understand if I am found to be in breach of this Privacy and Confidentiality Agreement, I will face disciplinary action.</p>
+
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <section class="sheet">
+        <img class="sheet-mark" src="assets/letterhead/emblem.png" alt="">
+        <table class="doc"><thead><tr><td class="banner-cell">
+            <img class="sheet-banner" src="assets/letterhead/image2.jpg" alt="">
+        </td></tr></thead><tbody><tr><td class="doc-cell">
+        <div class="sheet-body">
+
+            <h2 class="doc-h2">Employee Agreement</h2>
+            <label class="ack">
+                <input type="checkbox" id="privAck">
+                <span class="cbox" aria-hidden="true"></span>
+                <span class="cbtxt">I acknowledge I have read, and that I understand the information contained in this Privacy and Confidentiality Agreement.</span>
+            </label>
+
+            <div class="rowgrid">
+                <div class="cell-l">Employee Name</div>
+                <div class="cell-r"><input class="f" data-fill="name" placeholder="Full name"></div>
+                <div class="cell-l">Employee Signature</div>
+                <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the toolbar, then press Apply</span></div>
+                <div class="cell-l">Date</div>
+                <div class="cell-r"><input class="f" data-fill="date" placeholder="DD/MM/YYYY"></div>
+            </div>
+
+            <h2 class="doc-h2">Arete Care Acknowledgement of Agreement</h2>
+            <p class="arete-note">To be completed by Arete Care.</p>
+            <div class="rowgrid">
+                <div class="cell-l">Team Leader's name</div>
+                <div class="cell-r"><span class="small">&nbsp;</span></div>
+                <div class="cell-l">Team Leader's signature</div>
+                <div class="cell-r"><span class="small">&nbsp;</span></div>
+                <div class="cell-l">Date</div>
+                <div class="cell-r"><span class="small">&nbsp;</span></div>
+            </div>
+        </div>
+        </td></tr></tbody></table>
+    </section>
+
+    <!-- Official ATO forms (TFN + Superannuation). app.js renders each page of the
+         real PDF here and overlays the fill-in fields. display:contents so the
+         generated page-sheets sit directly in the .sheets flow. -->
+    <div id="atoMount" style="display:contents"></div>
+
+</main>
+
+<!-- Watermark repeated (centered) on every printed page; the banner repeats via
+     each document's <thead>. -->
+<div id="print-frame" aria-hidden="true">
+    <img class="pf-mark" src="assets/letterhead/emblem.png" alt="">
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
