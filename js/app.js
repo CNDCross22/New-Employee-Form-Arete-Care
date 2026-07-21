@@ -100,8 +100,50 @@ function todayDMY() {
     return `${dd}/${mm}/${n.getFullYear()}`;
 }
 
+/* Wipe everything typed on this device. The form keeps no storage, but values
+   linger in the open tab — on a shared machine the next person would otherwise
+   see the previous employee's TFN, bank details and signature. */
+function clearEverything() {
+    if (!confirm("Clear all entered details, including the signature?\n\nThis cannot be undone.")) return;
+
+    document.querySelectorAll("input.f, textarea.f, textarea.ta, .ato-f, .ato-comb-input")
+        .forEach((el) => { el.value = ""; });
+    document.querySelectorAll('input[type="radio"], input[type="checkbox"]')
+        .forEach((el) => { el.checked = false; });
+
+    // signature: shared identity + every slot it was stamped into
+    identitySignature = null;
+    signaturePad.clear();
+    document.querySelectorAll(".sig-slot").forEach((slot) => {
+        slot.classList.remove("filled");
+        slot.textContent = "Draw your signature in the toolbar, then press Apply";
+    });
+
+    // ATO tick state, comb cells and section gating
+    Object.keys(atoState).forEach((k) => { atoState[k].checks = {}; });
+    document.querySelectorAll(".ato-comb").forEach(paintComb);
+
+    nameInput.value = "";
+    dateInput.value = todayDMY();
+    fillName(); fillDate();
+    initAutogrow();
+    refreshAto();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Browsers may otherwise remember names/addresses and offer them to the next
+// person on a shared computer.
+function disableAutofill() {
+    document.querySelectorAll("input, textarea").forEach((el) => {
+        el.setAttribute("autocomplete", "off");
+        el.setAttribute("autocorrect", "off");
+        el.setAttribute("spellcheck", "false");
+    });
+}
+
 nameInput.addEventListener("input", fillName);
 dateInput.addEventListener("input", () => { maskDate(dateInput); fillDate(); });
+document.getElementById("clearAllBtn").addEventListener("click", clearEverything);
 // enforce DD/MM/YYYY on every inline date field too
 document.querySelectorAll('input.f[placeholder*="DD/MM/YYYY"]').forEach((el) => {
     el.addEventListener("input", () => maskDate(el));
@@ -351,4 +393,7 @@ dateInput.value = todayDMY();
 fillDate();
 sizeSigPad();
 initAutogrow();
-renderAtoDocs().catch((e) => console.error("ATO render failed", e));
+disableAutofill();
+renderAtoDocs()
+    .then(disableAutofill)          // also cover the ATO fields built at runtime
+    .catch((e) => console.error("ATO render failed", e));

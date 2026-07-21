@@ -4,6 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arete Care · New Employee Onboarding</title>
+
+<!-- This form handles TFNs, bank details and signatures entirely in the browser —
+     nothing is ever transmitted. The policy below enforces that: scripts may only
+     come from this origin, and connect-src blocks any attempt to send data to an
+     external server, so injected or tampered code cannot exfiltrate what is typed.
+     ('unsafe-inline' is needed for style attributes only, not for scripts.
+     frame-ancestors is omitted deliberately: it is ignored in a meta tag and
+     GitHub Pages cannot set response headers.) -->
+<meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+    font-src 'self';
+    worker-src 'self' blob:;
+    connect-src 'self';
+    object-src 'none';
+    base-uri 'none';
+    form-action 'none';
+">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="assets/letterhead/emblem.png">
 <script src="libs/signature_pad.umd.min.js"></script>
@@ -28,7 +48,7 @@
 
     <div class="tb-field">
         <label for="identityName">Full legal name</label>
-        <input type="text" id="identityName" placeholder="e.g. Jane Maree Smith" autocomplete="name">
+        <input type="text" id="identityName" placeholder="e.g. Jane Maree Smith" autocomplete="off">
     </div>
     <div class="tb-field">
         <label for="identityDate">Date (DD/MM/YYYY)</label>
@@ -45,6 +65,7 @@
         </div>
     </div>
 
+    <button class="btn-sm" id="clearAllBtn" type="button" title="Erase everything entered on this device">Clear form</button>
     <button class="btn-primary" id="downloadBtn" type="button">Download PDF</button>
 </header>
 
