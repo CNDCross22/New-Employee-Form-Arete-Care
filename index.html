@@ -36,6 +36,29 @@
 </head>
 <body>
 
+<!-- ============ PRIVACY NOTICE (shown before the form) ============ -->
+<div class="privacy-gate" id="privacyGate" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="privacy-card">
+        <img class="privacy-logo" src="assets/letterhead/emblem.png" alt="Arete Care">
+        <h2 id="privacyTitle">Privacy Notice</h2>
+        <p class="privacy-sub">Please read this before completing your onboarding form.</p>
+
+        <div class="privacy-body">
+            <p>This form collects personal details for your onboarding with <strong>Arete Care</strong>
+            (including your TFN, super and bank details).</p>
+            <ul>
+                <li>Everything stays in your browser &mdash; nothing is uploaded or stored.</li>
+                <li>Your completed PDF saves to your device; return it to HR securely.</li>
+                <li>On a shared computer, use <em>Clear form</em> when you finish.</li>
+            </ul>
+            <p class="privacy-consent-note">By selecting &ldquo;I understand and agree&rdquo; you consent
+            to providing this information for your Arete Care onboarding.</p>
+        </div>
+
+        <button class="btn-primary" id="privacyAgree" type="button">I understand and agree</button>
+    </div>
+</div>
+
 <!-- ============ TOOLBAR (screen only) ============ -->
 <header class="toolbar no-print">
     <div class="tb-brand">

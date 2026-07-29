@@ -37,6 +37,30 @@ body{
     -webkit-print-color-adjust:exact; print-color-adjust:exact;
 }
 
+/* ===================== PRIVACY NOTICE GATE (screen only) ===================== */
+.privacy-gate{
+    position:fixed; inset:0; z-index:1000;
+    display:flex; align-items:center; justify-content:center; padding:20px;
+    background:rgba(43,42,68,.6); backdrop-filter:blur(4px);
+}
+.privacy-gate.hidden{ display:none; }
+body.gated{ overflow:hidden; }
+.privacy-card{
+    background:#fff; width:100%; max-width:640px; max-height:92vh; overflow-y:auto;
+    border-radius:18px; box-shadow:0 30px 90px rgba(43,42,68,.45);
+    padding:30px 34px 26px;
+}
+.privacy-logo{ height:48px; display:block; margin:0 auto 10px; }
+#privacyTitle{ text-align:center; color:var(--purple-deep); font-size:23px; font-weight:800; margin:0; }
+.privacy-sub{ text-align:center; color:var(--muted); font-size:13px; margin:4px 0 16px; }
+.privacy-body{ font-size:13.4px; line-height:1.55; color:#34314f; }
+.privacy-body h3{ font-size:13.5px; color:var(--purple-ink); margin:16px 0 6px; }
+.privacy-body ul{ margin:6px 0 12px; padding-left:20px; }
+.privacy-body li{ margin-bottom:7px; }
+.privacy-consent-note{ margin-top:14px; padding:12px 14px; border-radius:10px;
+    background:var(--fill); box-shadow:inset 0 0 0 1px var(--fill-line); font-size:13px; }
+.privacy-card .btn-primary{ display:block; width:100%; margin-top:18px; padding:14px; font-size:15px; }
+
 /* ===================== TOP TOOLBAR (screen only) ===================== */
 .toolbar{
     position:sticky; top:0; z-index:50;
@@ -291,7 +315,7 @@ table.grid .f{ width:100%; }
     @page{ size:A4; margin:0; }
 
     body{ background:#fff; }
-    .toolbar, .docnav, .no-print{ display:none !important; }
+    .toolbar, .docnav, .no-print, .privacy-gate{ display:none !important; }
 
     .sheets{ padding:0; gap:0; }
     .sheet{

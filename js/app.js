@@ -389,6 +389,19 @@ function refreshAto() {
     });
 }
 
+// The privacy notice must be acknowledged before the form can be used.
+document.body.classList.add("gated");
+(function privacyGate() {
+    const gate = document.getElementById("privacyGate");
+    const agree = document.getElementById("privacyAgree");
+    agree.addEventListener("click", () => {
+        gate.classList.add("hidden");
+        document.body.classList.remove("gated");
+        nameInput.focus();
+    });
+    agree.focus();
+})();
+
 dateInput.value = todayDMY();
 fillDate();
 sizeSigPad();
