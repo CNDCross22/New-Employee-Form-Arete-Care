@@ -1,0 +1,12 @@
+{
+  "name": "arete-onboarding-sendtohr",
+  "version": "1.0.0",
+  "description": "Azure Function that emails the onboarding PDF to HR via Microsoft Graph.",
+  "main": "src/sendToHr.js",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.5.0"
+  }
+}

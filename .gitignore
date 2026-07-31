@@ -8,6 +8,13 @@ Desktop.ini
 .DS_Store
 *.swp
 
+# Node / backend
+node_modules/
+# Backend local secrets — MUST NOT be committed (Graph client secret)
+backend/local.settings.json
+supabase/.env
+.env
+
 # Scratch / temp artifacts
 _*.png
 _*.pdf

@@ -10,6 +10,9 @@ const nameInput = document.getElementById("identityName");
 const dateInput = document.getElementById("identityDate");
 const sigCanvas = document.getElementById("sigPad");
 const downloadBtn = document.getElementById("downloadBtn");
+const sendBtn = document.getElementById("sendBtn");
+const sendStatus = document.getElementById("sendStatus");
+const CONFIG = window.ARETE_CONFIG || {};
 
 /* ---------- Signature pad ---------- */
 const signaturePad = new SignaturePad(sigCanvas, {
@@ -151,6 +154,8 @@ document.querySelectorAll('input.f[placeholder*="DD/MM/YYYY"]').forEach((el) => 
 document.getElementById("sigClear").addEventListener("click", () => signaturePad.clear());
 document.getElementById("sigApply").addEventListener("click", applySignature);
 downloadBtn.addEventListener("click", () => window.print());
+sendBtn.addEventListener("click", sendToHr);
+if (CONFIG.SEND_ENDPOINT) sendBtn.hidden = false;   // only show when the backend is set
 
 // Let a signer edit an individual inline field without breaking enter-once:
 // once they type directly, that field keeps its own value.
@@ -387,6 +392,158 @@ function refreshAto() {
             }
         });
     });
+}
+
+/* ============================================================================
+   SEND TO HR
+
+   "Download PDF" uses the browser's Print (crisp vector) — but script cannot read
+   those bytes, so to email a copy we generate the PDF here: each page is
+   rasterised with html2canvas and assembled with jsPDF. The bytes are POSTed to
+   an Azure Function (js/config.js -> SEND_ENDPOINT) which holds the Microsoft
+   Graph credentials and emails the file to HR. No credential ever touches this
+   page, and no employee data is stored.
+   ============================================================================ */
+
+function setSendStatus(msg, kind) {
+    sendStatus.hidden = !msg;
+    sendStatus.textContent = msg || "";
+    sendStatus.className = "send-status" + (kind ? " send-status--" + kind : "");
+}
+
+// Values live on the DOM .value property, which does NOT survive html2canvas's
+// clone — so snapshot them, then render each page's clone with the values painted
+// in as plain text (and ticks/radios/signatures drawn), matching the print look.
+function prepareExportClone(clonedDoc, values) {
+    clonedDoc.body.classList.add("exporting");
+
+    clonedDoc.querySelectorAll("input, textarea").forEach((el) => {
+        const v = values[el.dataset.eid];
+        const win = clonedDoc.defaultView;
+        const cs = win.getComputedStyle(el);
+
+        if (el.classList.contains("ato-comb-input")) { el.style.visibility = "hidden"; return; }
+        if (el.type === "radio" || el.type === "checkbox") return;   // handled below
+
+        const t = clonedDoc.createElement("div");
+        t.textContent = v || "";
+        t.className = "export-text";
+        t.style.font = cs.font;
+        t.style.color = "#000";
+        t.style.whiteSpace = "pre-wrap";
+        t.style.overflowWrap = "break-word";
+        if (cs.position === "absolute") {                             // ATO plain field
+            t.style.position = "absolute";
+            t.style.left = el.style.left; t.style.top = el.style.top;
+            t.style.width = el.style.width; t.style.height = el.style.height;
+            t.style.display = "flex"; t.style.alignItems = "center"; t.style.padding = "0 3px";
+        } else {                                                      // letterhead field
+            t.style.display = "block"; t.style.width = "100%";
+            t.style.minHeight = cs.height; t.style.padding = cs.padding;
+            t.style.lineHeight = "1.35";
+        }
+        el.parentNode.insertBefore(t, el);
+        el.style.display = "none";
+    });
+
+    // ticks drawn on the ATO forms and the Details Yes/No boxes
+    clonedDoc.querySelectorAll(".ato-tick.checked, .tick-overlay.checked").forEach((el) => {
+        el.textContent = "✓";
+        el.style.cssText += ";display:flex;align-items:center;justify-content:center;color:#0f2d3a;font-weight:900;";
+    });
+    // acknowledgement checkbox (custom .cbox)
+    clonedDoc.querySelectorAll(".ack input").forEach((inp) => {
+        if (!values[inp.dataset.eid]) return;
+        const box = inp.nextElementSibling;
+        if (box && box.classList.contains("cbox")) {
+            box.textContent = "✓";
+            box.style.cssText += ";display:flex;align-items:center;justify-content:center;color:#2c8f87;font-weight:900;";
+        }
+    });
+    // custom radios (gender / Yes-No) — fill the dot on the checked one
+    clonedDoc.querySelectorAll(".opt input[type=radio]").forEach((inp) => {
+        if (!values[inp.dataset.eid]) return;
+        inp.style.cssText += ";background:#2c8f87;box-shadow:inset 0 0 0 2px #fff;border-color:#2c8f87;";
+    });
+}
+
+async function buildPdfBlob() {
+    const { jsPDF } = window.jspdf;
+    const A4 = { w: 595.28, h: 841.89 };                              // points
+    const pdf = new jsPDF({ unit: "pt", format: "a4", compress: true });
+
+    // snapshot every field value (property, not attribute)
+    const values = {};
+    let n = 0;
+    document.querySelectorAll("input, textarea").forEach((el) => {
+        el.dataset.eid = String(n);
+        values[n] = (el.type === "radio" || el.type === "checkbox") ? el.checked : el.value;
+        n++;
+    });
+
+    try {
+        // Kept under ~3 MB so the email uses Graph's simple sendMail (Mail.Send only),
+        // not a draft+upload session (which would need Mail.ReadWrite). The employee's
+        // own Download stays crisp — this scale applies only to the emailed copy.
+        const sheets = [...document.querySelectorAll(".sheet")];
+        for (let i = 0; i < sheets.length; i++) {
+            const canvas = await html2canvas(sheets[i], {
+                scale: 1.1,
+                backgroundColor: "#ffffff",
+                useCORS: true,
+                logging: false,
+                onclone: (doc) => prepareExportClone(doc, values),
+            });
+            if (i > 0) pdf.addPage();
+            pdf.addImage(canvas.toDataURL("image/jpeg", 0.7), "JPEG", 0, 0, A4.w, A4.h, undefined, "FAST");
+            setSendStatus(`Preparing your PDF… (${i + 1}/${sheets.length})`);
+        }
+    } finally {
+        document.querySelectorAll("[data-eid]").forEach((el) => { delete el.dataset.eid; });
+    }
+    return pdf.output("blob");
+}
+
+function blobToBase64(blob) {
+    return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(String(r.result).split(",")[1]);
+        r.onerror = reject;
+        r.readAsDataURL(blob);
+    });
+}
+
+async function sendToHr() {
+    if (!CONFIG.SEND_ENDPOINT) { setSendStatus("Sending isn't set up yet — please use Download Copy.", "err"); return; }
+    if (!nameInput.value.trim()) { alert("Please enter your full legal name first."); nameInput.focus(); return; }
+    if (!confirm(`Send your completed onboarding PDF to ${CONFIG.HR_LABEL || "HR"}?`)) return;
+
+    sendBtn.disabled = true; downloadBtn.disabled = true;
+    setSendStatus("Preparing your PDF…");
+    try {
+        const blob = await buildPdfBlob();
+        setSendStatus(`Sending to ${CONFIG.HR_LABEL || "HR"}…`);
+        const payload = {
+            filename: `Arete Care Onboarding - ${(nameInput.value.trim() || "New Employee").replace(/[^\w \-]/g, "")}.pdf`,
+            employeeName: nameInput.value.trim(),
+            date: dateInput.value,
+            pdfBase64: await blobToBase64(blob),
+        };
+        const headers = { "Content-Type": "application/json" };
+        if (CONFIG.SEND_AUTH) { headers["apikey"] = CONFIG.SEND_AUTH; headers["Authorization"] = "Bearer " + CONFIG.SEND_AUTH; }
+        const res = await fetch(CONFIG.SEND_ENDPOINT, {
+            method: "POST",
+            headers,
+            body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error("server responded " + res.status);
+        setSendStatus(`Sent to ${CONFIG.HR_LABEL || "HR"}. ✓  You can close this page.`, "ok");
+    } catch (e) {
+        console.error(e);
+        setSendStatus("Couldn't send. Please use Download Copy and email it to HR instead.", "err");
+    } finally {
+        sendBtn.disabled = false; downloadBtn.disabled = false;
+    }
 }
 
 // The privacy notice must be acknowledged before the form can be used.

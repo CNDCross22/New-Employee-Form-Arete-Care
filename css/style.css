@@ -37,6 +37,27 @@ body{
     -webkit-print-color-adjust:exact; print-color-adjust:exact;
 }
 
+/* ===================== SEND TO HR ===================== */
+.btn-send{
+    padding:11px 20px; font-size:14px; font-weight:800; color:#fff;
+    background:linear-gradient(120deg, var(--teal), var(--teal-deep));
+    box-shadow:0 6px 16px rgba(63,183,173,.32);
+}
+.btn-send:hover{ filter:brightness(1.05); }
+.btn-send:disabled{ background:#bcd8d5; box-shadow:none; cursor:not-allowed; }
+.send-status{ width:100%; margin:8px 0 0; font-size:13px; font-weight:700; color:var(--muted); }
+.send-status--ok{ color:var(--teal-deep); }
+.send-status--err{ color:var(--danger); }
+
+/* ---- Export mode: the clone html2canvas rasterises for the emailed PDF.
+        Strip the on-screen affordances so it matches the printed look. ---- */
+.exporting .sheet{ box-shadow:none !important; }
+.exporting .f, .exporting .ta, .exporting .ato-f, .exporting .ato-comb-input,
+.exporting .ato-tick, .exporting .sig-slot{ background:transparent !important; box-shadow:none !important; }
+.exporting .ato-comb-cells span.caret{ background:transparent !important; box-shadow:none !important; }
+.exporting .sig-slot:not(.filled){ color:transparent !important; }
+.exporting .export-text{ color:#000; }
+
 /* ===================== PRIVACY NOTICE GATE (screen only) ===================== */
 .privacy-gate{
     position:fixed; inset:0; z-index:1000;

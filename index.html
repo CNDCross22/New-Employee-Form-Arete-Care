@@ -19,7 +19,7 @@
     img-src 'self' data:;
     font-src 'self';
     worker-src 'self' blob:;
-    connect-src 'self';
+    connect-src 'self' https://*.supabase.co;
     object-src 'none';
     base-uri 'none';
     form-action 'none';
@@ -33,6 +33,15 @@
 <script src="libs/pdf.min.js"></script>
 <script src="js/field-maps.js"></script>
 <script src="js/pdf-data.js"></script>
+
+<!-- Generating a PDF file (for the "Send to HR" email attachment). The browser's
+     Print output cannot be read by script, so we rasterise the pages here. -->
+<script src="libs/html2canvas.min.js"></script>
+<script src="libs/jspdf.umd.min.js"></script>
+
+<!-- Runtime config. SEND_ENDPOINT is your Azure Function URL; leave empty to hide
+     the "Send to HR" button until the backend is deployed. -->
+<script src="js/config.js"></script>
 </head>
 <body>
 
@@ -88,7 +97,9 @@
     </div>
 
     <button class="btn-sm" id="clearAllBtn" type="button" title="Erase everything entered on this device">Clear form</button>
-    <button class="btn-primary" id="downloadBtn" type="button">Download PDF</button>
+    <button class="btn-primary" id="downloadBtn" type="button">Download Copy</button>
+    <button class="btn-send" id="sendBtn" type="button" hidden>Send to HR</button>
+    <p class="send-status" id="sendStatus" role="status" aria-live="polite" hidden></p>
 </header>
 
 <nav class="docnav no-print">
