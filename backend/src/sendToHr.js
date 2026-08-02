@@ -14,7 +14,7 @@
      HR_RECIPIENT    where it goes                   (e.g. hr@aretecare.com.au)
      HR_CC           optional, comma-separated
      ALLOWED_ORIGIN  the site origin(s) allowed to call this, comma-separated
-                     (e.g. https://cndcross22.github.io,https://www.aretecare.com.au)
+                     (e.g. https://onboarding.aretecare.com.au)
 
    Graph app registration needs the APPLICATION permission Mail.Send with admin
    consent. Restrict it to GRAPH_SENDER only, with an ApplicationAccessPolicy, so
@@ -27,7 +27,7 @@ const INLINE_LIMIT = 3 * 1024 * 1024;          // <3 MB -> single sendMail; else
 
 // The form runs INSIDE the iframe, so its origin is the site's own URL
 // (GitHub Pages), not the WordPress page that embeds it.
-const DEFAULT_ORIGIN = "https://cndcross22.github.io";
+const DEFAULT_ORIGIN = "https://onboarding.aretecare.com.au";
 
 function corsHeaders(req) {
     const allowed = (process.env.ALLOWED_ORIGIN || DEFAULT_ORIGIN).split(",").map((s) => s.trim()).filter(Boolean);

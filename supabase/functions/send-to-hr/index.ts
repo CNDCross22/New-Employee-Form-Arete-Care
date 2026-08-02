@@ -15,7 +15,7 @@
 const GRAPH = "https://graph.microsoft.com/v1.0";
 const INLINE_LIMIT = 3 * 1024 * 1024; // <3 MB -> single sendMail; else upload session
 
-const ALLOWED = (Deno.env.get("ONBOARD_ALLOWED_ORIGIN") ?? "https://cndcross22.github.io")
+const ALLOWED = (Deno.env.get("ONBOARD_ALLOWED_ORIGIN") ?? "https://onboarding.aretecare.com.au")
   .split(",").map((s) => s.trim()).filter(Boolean);
 
 function corsHeaders(origin: string): Record<string, string> {

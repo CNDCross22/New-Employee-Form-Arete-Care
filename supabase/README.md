@@ -29,7 +29,9 @@ supabase secrets set ONBOARD_TENANT_ID=<tenant> ONBOARD_CLIENT_ID=<client> ONBOA
 ```
 `ONBOARD_GRAPH_SENDER` and `ONBOARD_HR_RECIPIENT` default to `hr@aretecare.com.au`;
 set them only to override (or add `ONBOARD_HR_CC`). `ONBOARD_ALLOWED_ORIGIN`
-defaults to the GitHub Pages origin.
+defaults to `https://onboarding.aretecare.com.au`; set it explicitly to allow more
+than one origin, comma-separated. **Changing this secret takes effect immediately —
+no redeploy needed.**
 
 Deploy with **Verify JWT OFF** (dashboard toggle, or `--no-verify-jwt` on the CLI).
 

@@ -45,7 +45,7 @@ Function App → **Configuration → Application settings**:
 | `GRAPH_SENDER` | `hr@aretecare.com.au` (sends **from**) |
 | `HR_RECIPIENT` | `hr@aretecare.com.au` (sends **to**) |
 | `HR_CC` | *(optional, comma-separated)* |
-| `ALLOWED_ORIGIN` | `https://cndcross22.github.io,https://www.aretecare.com.au` |
+| `ALLOWED_ORIGIN` | `https://onboarding.aretecare.com.au` |
 
 ## 4. CORS
 
