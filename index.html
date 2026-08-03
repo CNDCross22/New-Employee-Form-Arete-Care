@@ -32,6 +32,8 @@
      overlays, so they print into the same single PDF as the Arete documents. -->
 <script src="libs/pdf.min.js"></script>
 <script src="js/field-maps.js"></script>
+<!-- Corrects the comb-field rects before app.js builds the ATO overlays. -->
+<script src="js/field-map-fix.js"></script>
 <script src="js/pdf-data.js"></script>
 
 <!-- Generating a PDF file (for the "Send to HR" email attachment). The browser's
@@ -39,9 +41,10 @@
 <script src="libs/html2canvas.min.js"></script>
 <script src="libs/jspdf.umd.min.js"></script>
 
-<!-- Runtime config. SEND_ENDPOINT is your Azure Function URL; leave empty to hide
-     the "Send to HR" button until the backend is deployed. -->
+<!-- Runtime config. SEND_ENDPOINT is the Supabase Edge Function URL; leave it
+     empty to hide the "Send to HR" button. -->
 <script src="js/config.js"></script>
+
 </head>
 <body>
 
@@ -68,7 +71,7 @@
 </div>
 
 <!-- ============ TOOLBAR (screen only) ============ -->
-<header class="toolbar no-print">
+<header class="topbar no-print">
     <div class="tb-brand">
         <img src="assets/letterhead/emblem.png" alt="Arete Care">
         <div>
@@ -77,38 +80,60 @@
         </div>
     </div>
 
-    <div class="tb-field">
-        <label for="identityName">Full legal name</label>
-        <input type="text" id="identityName" placeholder="e.g. Jane Maree Smith" autocomplete="off">
-    </div>
-    <div class="tb-field">
-        <label for="identityDate">Date (DD/MM/YYYY)</label>
-        <input type="text" id="identityDate" placeholder="DD/MM/YYYY" inputmode="numeric" maxlength="10" autocomplete="off">
-    </div>
-    <div class="tb-sign">
-        <label>Signature</label>
-        <div class="tb-sign-row">
-            <canvas id="sigPad"></canvas>
-            <div class="tb-sign-btns">
-                <button class="btn-sm" id="sigClear" type="button">Clear</button>
-                <button class="btn-sm" id="sigApply" type="button">Apply</button>
-            </div>
-        </div>
-    </div>
-
-    <button class="btn-sm" id="clearAllBtn" type="button" title="Erase everything entered on this device">Clear form</button>
-    <button class="btn-primary" id="downloadBtn" type="button">Download Copy</button>
-    <button class="btn-send" id="sendBtn" type="button" hidden>Send to HR</button>
-    <p class="send-status" id="sendStatus" role="status" aria-live="polite" hidden></p>
+    <nav class="docnav" aria-label="Jump to document">
+        <a href="#doc-details"><span class="dn-num">1 · </span>New Employee Details</a>
+        <a href="#doc-coc"><span class="dn-num">2 · </span>Code of Conduct</a>
+        <a href="#doc-privacy"><span class="dn-num">3 · </span>Privacy &amp; Confidentiality</a>
+        <a href="#doc-tfn"><span class="dn-num">4 · </span>TFN Declaration</a>
+        <a href="#doc-super"><span class="dn-num">5 · </span>Superannuation</a>
+    </nav>
 </header>
 
-<nav class="docnav no-print">
-    <a href="#doc-details">1 · New Employee Details</a>
-    <a href="#doc-coc">2 · Code of Conduct</a>
-    <a href="#doc-privacy">3 · Privacy &amp; Confidentiality</a>
-    <a href="#doc-tfn">4 · TFN Declaration</a>
-    <a href="#doc-super">5 · Superannuation</a>
-</nav>
+<aside class="sidebar no-print" aria-label="Your details and actions">
+    <!-- Small screens only: collapses the panel so the document is visible
+         straight away instead of sitting below a screenful of controls. -->
+    <button class="sb-summary-row" id="pvToggle" type="button" aria-expanded="false" aria-controls="sbScroll">
+        <span class="sb-summary" id="pvSummary">Tap to add your name, date and signature</span>
+        <span class="sb-chev" aria-hidden="true">▾</span>
+    </button>
+
+    <div class="sb-scroll" id="sbScroll">
+        <h2 class="sb-h">Your details</h2>
+        <p class="sb-hint">Fill these in once. They will be copied into all five documents for you.</p>
+
+        <div class="sb-field">
+            <label for="identityName">Full legal name</label>
+            <input type="text" id="identityName" placeholder="e.g. Jane Maree Smith" autocomplete="off">
+        </div>
+        <div class="sb-field">
+            <label for="identityDate">Date (DD/MM/YYYY)</label>
+            <input type="text" id="identityDate" placeholder="DD/MM/YYYY" inputmode="numeric" maxlength="10" autocomplete="off">
+        </div>
+
+        <div class="sb-field sb-sign">
+            <span class="sb-label" id="sigLabel">Signature</span>
+            <div class="sb-padwrap" id="sigWrap">
+                <canvas id="sigPad" aria-labelledby="sigLabel"></canvas>
+                <span class="sb-padhint" aria-hidden="true">&#10005;&nbsp; Sign here</span>
+                <span class="sb-padok" aria-hidden="true">Applied &#10003;</span>
+            </div>
+            <div class="sb-sign-btns">
+                <button class="btn-sm" id="sigClear" type="button">Clear</button>
+                <button class="btn-sm btn-apply" id="sigApply" type="button">Apply</button>
+            </div>
+        </div>
+
+        <button class="btn-sm sb-clearall" id="clearAllBtn" type="button" title="Erase everything entered on this device">Clear form</button>
+    </div>
+
+    <!-- Pinned so the primary action is always reachable — on mobile this becomes
+         a fixed bottom bar rather than something you have to scroll back up for. -->
+    <div class="sb-actions">
+        <button class="btn-primary" id="downloadBtn" type="button">Download Copy</button>
+        <button class="btn-send" id="sendBtn" type="button" hidden>Send to HR</button>
+        <p class="send-status" id="sendStatus" role="status" aria-live="polite" hidden></p>
+    </div>
+</aside>
 
 <main class="sheets">
 
@@ -317,13 +342,13 @@
             <table class="grid">
                 <thead><tr><th style="width:34%">Days</th><th>Start time</th><th>End time</th></tr></thead>
                 <tbody>
-                    <tr><td class="lbl">Monday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
-                    <tr><td class="lbl">Tuesday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
-                    <tr><td class="lbl">Wednesday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
-                    <tr><td class="lbl">Thursday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
-                    <tr><td class="lbl">Friday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
-                    <tr><td class="lbl">Saturday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
-                    <tr><td class="lbl">Sunday</td><td><textarea class="f" rows="1"></textarea></td><td><textarea class="f" rows="1"></textarea></td></tr>
+                    <tr><td class="lbl">Monday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
+                    <tr><td class="lbl">Tuesday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
+                    <tr><td class="lbl">Wednesday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
+                    <tr><td class="lbl">Thursday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
+                    <tr><td class="lbl">Friday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
+                    <tr><td class="lbl">Saturday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
+                    <tr><td class="lbl">Sunday</td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td><td><textarea class="f time" rows="1" placeholder="HH:MM"></textarea></td></tr>
                 </tbody>
             </table>
 
@@ -355,7 +380,7 @@
                 </ol>
                 <div class="rowgrid">
                     <div class="cell-l">Signature of Applicant</div>
-                    <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the toolbar, then press Apply</span></div>
+                    <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the sidebar, then press Apply</span></div>
                     <div class="cell-l">Date</div>
                     <div class="cell-r"><input class="f grow" data-fill="date" placeholder="DD/MM/YYYY"></div>
                 </div>
@@ -539,7 +564,7 @@
                 <p>I, <input class="f name-inline" data-fill="name" placeholder="Full name"> have read this Code of Conduct and agree to abide by all elements in this document.</p>
                 <div class="rowgrid" style="grid-template-columns:130px 1fr;">
                     <div class="cell-l">Signed</div>
-                    <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the toolbar, then press Apply</span></div>
+                    <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the sidebar, then press Apply</span></div>
                     <div class="cell-l">Date</div>
                     <div class="cell-r"><input class="f grow" data-fill="date" placeholder="DD/MM/YYYY"></div>
                 </div>
@@ -594,7 +619,7 @@
                 <div class="cell-l">Employee Name</div>
                 <div class="cell-r"><input class="f" data-fill="name" placeholder="Full name"></div>
                 <div class="cell-l">Employee Signature</div>
-                <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the toolbar, then press Apply</span></div>
+                <div class="cell-r"><span class="sig-slot" data-sig>Draw your signature in the sidebar, then press Apply</span></div>
                 <div class="cell-l">Date</div>
                 <div class="cell-r"><input class="f" data-fill="date" placeholder="DD/MM/YYYY"></div>
             </div>
@@ -627,5 +652,7 @@
 </div>
 
 <script src="js/app.js"></script>
+<!-- Field templates, pickers, mobile behaviour. Runs after app.js. -->
+<script src="js/enhance.js"></script>
 </body>
 </html>
