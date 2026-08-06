@@ -316,6 +316,19 @@
     var origPrepare = window.prepareExportClone;
     if (typeof origPrepare === "function") {
         window.prepareExportClone = function (clonedDoc, values) {
+            /* The satellite picker inputs are real <input> elements, so app.js's
+               snapshot loop gives them an eid and records their raw value —
+               yyyy-mm-dd for dates, HH:MM for times — and then paints it into
+               the page as visible text. That put a second, ISO-formatted date
+               under every date field and doubled every availability row.
+
+               They must be gone BEFORE the original runs, not after. The
+               overlays go too: CSS already hides them, but a removed node
+               cannot be rendered by mistake. */
+            clonedDoc.querySelectorAll(".mf-native, .mf-ghost").forEach(function (el) {
+                el.parentNode.removeChild(el);
+            });
+
             origPrepare(clonedDoc, values);
             clonedDoc.querySelectorAll('.ato-tick.checked[data-fid^="tfn:"]')
                 .forEach(function (el) {
