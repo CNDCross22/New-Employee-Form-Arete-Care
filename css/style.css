@@ -58,6 +58,20 @@ body{
 .exporting .sig-slot:not(.filled){ color:transparent !important; }
 .exporting .export-text{ color:#000; }
 
+/* The export replaces each field with a plain <div>, and a div in a table cell
+   contributes its min-content width to the auto table layout. app.js sets
+   overflow-wrap:break-word inline, but per CSS Text those break opportunities
+   are explicitly NOT counted when computing min-content — so one long unbroken
+   entry (a referee name, an email) forced its column wide and printed on a
+   single line instead of wrapping. "anywhere" is the value that does count,
+   and !important is needed to beat the inline style. */
+.exporting .export-text{ overflow-wrap:anywhere !important; }
+/* keep the columns to their share rather than letting content drive them */
+.exporting table.grid{ table-layout:fixed; }
+/* with rows now wrapping to different heights, middle alignment reads as
+   drifting text; top-align so every cell in a row starts on the same line */
+.exporting table.grid td{ vertical-align:top; }
+
 /* ===================== PRIVACY NOTICE GATE (screen only) ===================== */
 .privacy-gate{
     position:fixed; inset:0; z-index:1000;
