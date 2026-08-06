@@ -68,6 +68,22 @@ body{
 .exporting .export-text{ overflow-wrap:anywhere !important; }
 /* keep the columns to their share rather than letting content drive them */
 .exporting table.grid{ table-layout:fixed; }
+
+/* Give every answer a visible box so the emailed copy reads as a completed
+   form rather than text floating on the page. Matches the print rules below,
+   which the export path previously did not share at all. Fields already inside
+   a bordered cell keep just the cell — a box in a box reads as clutter. */
+.exporting .sheet:not(.sheet--pdf) .export-text{
+    border:1px solid #c9c6dd; border-radius:3px;
+}
+.exporting .rowgrid .export-text,
+.exporting .fgrid .export-text,
+.exporting table.grid .export-text{ border:0; }
+/* the ATO forms draw their own boxes — never add a second one */
+.exporting .sheet--pdf .export-text{ border:0; }
+
+/* the employment-history label sat hard against the date row above it */
+.exporting .job .qhead, .job .qhead{ margin-top:10px; }
 /* with rows now wrapping to different heights, middle alignment reads as
    drifting text; top-align so every cell in a row starts on the same line */
 .exporting table.grid td{ vertical-align:top; }
@@ -387,11 +403,15 @@ table.grid .f{ width:100%; }
     .doc-h2{ break-after:avoid; }
     ol.legal li, ul.bullets li{ break-inside:avoid; }
 
-    /* fills render as clean text, no boxes */
-    .f, .sig-slot{ background:transparent !important; box-shadow:none !important; border-bottom:1px solid #999; border-radius:0; }
+    /* Fills render in a light box, matching the emailed copy exactly — these
+       two used to disagree, with print showing rules and the email nothing.
+       Fields inside a bordered cell keep just the cell. */
+    .f, .sig-slot{ background:transparent !important; box-shadow:none !important;
+                   border:1px solid #c9c6dd; border-radius:3px; }
     .f{ color:#000; }
-    .rowgrid .f, .fgrid .f, table.grid .f{ border-bottom:0 !important; }
-    .ta{ background:transparent !important; border:1px solid #bbb; color:#000; }
+    .rowgrid .f, .fgrid .f, table.grid .f,
+    .rowgrid .sig-slot{ border:0 !important; }
+    .ta{ background:transparent !important; border:1px solid #c9c6dd; border-radius:3px; color:#000; }
     .f::placeholder, .ta::placeholder{ color:transparent !important; }  /* empty fields print blank */
     table.grid, .job, .qrow, .fgrid .fk, .fgrid .fv, .fsec-head{ break-inside:avoid; }
     .fsec-head{ break-after:avoid; }
