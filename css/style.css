@@ -653,8 +653,15 @@ body.has-send .sb-actions .btn-primary:hover{ background:#f3f1fd; filter:none; }
     .sb-actions{
         position:static; flex-direction:column; align-items:stretch;
         padding:14px 18px; box-shadow:none; backdrop-filter:none;
+        /* must not inherit wrap from the row layout: once the direction is
+           column, a wrapping item starts a new COLUMN, i.e. it lands beside
+           the buttons instead of under them */
+        flex-wrap:nowrap;
     }
     .sb-actions .btn-primary, .sb-actions .btn-send{ flex:0 0 auto; width:100%; }
+    /* flex-basis is the main axis, which is now height — 100% there made the
+       status overflow the sidebar sideways */
+    .sb-actions .send-status{ flex:0 0 auto; width:100%; }
 
     .sheets{ grid-area:main; overflow-x:visible; align-items:center; padding:22px 16px 60px; }
 }
